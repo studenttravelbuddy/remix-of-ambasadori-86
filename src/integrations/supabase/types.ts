@@ -14,16 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      ambassador_applications: {
+        Row: {
+          academic_year: string | null
+          birth_date: string
+          card_number: string | null
+          card_type: Database["public"]["Enums"]["card_type"]
+          city: string
+          content_use_accepted: boolean
+          created_at: string
+          eligibility_confirmed: boolean
+          email: string
+          employer_name: string | null
+          experience: string | null
+          full_name: string
+          gdpr_accepted: boolean
+          holder_status: Database["public"]["Enums"]["card_holder_status"]
+          id: string
+          instagram_handle: string | null
+          job_position: string | null
+          motivation: string
+          phone: string
+          portfolio_url: string | null
+          school_name: string | null
+          status: Database["public"]["Enums"]["application_status"]
+          study_form: string | null
+          teaching_scope: string | null
+          terms_accepted: boolean
+          tiktok_handle: string | null
+          updated_at: string
+        }
+        Insert: {
+          academic_year?: string | null
+          birth_date: string
+          card_number?: string | null
+          card_type: Database["public"]["Enums"]["card_type"]
+          city: string
+          content_use_accepted?: boolean
+          created_at?: string
+          eligibility_confirmed?: boolean
+          email: string
+          employer_name?: string | null
+          experience?: string | null
+          full_name: string
+          gdpr_accepted?: boolean
+          holder_status: Database["public"]["Enums"]["card_holder_status"]
+          id?: string
+          instagram_handle?: string | null
+          job_position?: string | null
+          motivation: string
+          phone: string
+          portfolio_url?: string | null
+          school_name?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          study_form?: string | null
+          teaching_scope?: string | null
+          terms_accepted?: boolean
+          tiktok_handle?: string | null
+          updated_at?: string
+        }
+        Update: {
+          academic_year?: string | null
+          birth_date?: string
+          card_number?: string | null
+          card_type?: Database["public"]["Enums"]["card_type"]
+          city?: string
+          content_use_accepted?: boolean
+          created_at?: string
+          eligibility_confirmed?: boolean
+          email?: string
+          employer_name?: string | null
+          experience?: string | null
+          full_name?: string
+          gdpr_accepted?: boolean
+          holder_status?: Database["public"]["Enums"]["card_holder_status"]
+          id?: string
+          instagram_handle?: string | null
+          job_position?: string | null
+          motivation?: string
+          phone?: string
+          portfolio_url?: string | null
+          school_name?: string | null
+          status?: Database["public"]["Enums"]["application_status"]
+          study_form?: string | null
+          teaching_scope?: string | null
+          terms_accepted?: boolean
+          tiktok_handle?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
+      application_status: "new" | "in_review" | "approved" | "rejected"
+      card_holder_status: "existing" | "new"
+      card_type: "isic" | "itic" | "euro26"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +269,11 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+      application_status: ["new", "in_review", "approved", "rejected"],
+      card_holder_status: ["existing", "new"],
+      card_type: ["isic", "itic", "euro26"],
+    },
   },
 } as const
