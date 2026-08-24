@@ -54,7 +54,7 @@ export function Hero({ remaining }: { remaining: number | null }) {
               Ako to funguje
             </a>
           </div>
-          <BrandMarkRow className="mt-10 [&_span]:border-primary-foreground/40 [&_span]:text-primary-foreground" />
+          <BrandMarkRow className="mt-10" onLight={false} />
         </div>
 
         <div className="lg:w-2/5">
