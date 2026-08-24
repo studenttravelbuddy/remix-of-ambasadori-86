@@ -186,6 +186,8 @@
   --color-brand-blue-dark: var(--brand-blue-dark);
   --color-brand-orange: var(--brand-orange);
   --color-brand-orange-dark: var(--brand-orange-dark);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-pink-dark: var(--brand-pink-dark);
   --color-brand-gray: var(--brand-gray);
   --color-card-accent: var(--card-accent);
   --color-card-accent-strong: var(--card-accent-strong);
@@ -193,8 +195,8 @@
 
 /* Per-card accent context, set on a wrapper element */
 @utility card-euro26 {
-  --card-accent: var(--brand-orange);
-  --card-accent-strong: var(--brand-orange-dark);
+  --card-accent: var(--brand-pink);
+  --card-accent-strong: var(--brand-pink-dark);
 }
 
 @utility card-isic {
@@ -203,8 +205,8 @@
 }
 
 @utility card-itic {
-  --card-accent: var(--brand-blue);
-  --card-accent-strong: var(--brand-blue-dark);
+  --card-accent: var(--brand-orange);
+  --card-accent-strong: var(--brand-orange-dark);
 }
 
 @utility text-balance-tight {
