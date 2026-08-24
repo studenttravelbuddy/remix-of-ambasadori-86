@@ -1,36 +1,55 @@
+import eycLogo from "@/assets/eyc-logo.png.asset.json";
+import isicLogo from "@/assets/isic-logo.png.asset.json";
+import iticLogo from "@/assets/itic-logo.png.asset.json";
 import { CARD_META, CARD_TYPES, type CardType } from "@/lib/ambassador";
 import { cn } from "@/lib/utils";
 
-/**
- * Placeholder pre logá ISIC / ITIC / EURO<26.
- * Keď prídu oficiálne súbory, stačí sem vložiť <img src={...} /> namiesto textu.
- */
+const LOGOS: Record<CardType, { url: string; alt: string }> = {
+  isic: { url: isicLogo.url, alt: "ISIC – International Student Identity Card" },
+  itic: { url: iticLogo.url, alt: "ITIC – International Teacher Identity Card" },
+  euro26: { url: eycLogo.url, alt: "EURO<26 / European Youth Card" },
+};
+
 export function BrandMark({
   card,
   className,
+  onLight = true,
 }: {
   card: CardType;
   className?: string;
+  onLight?: boolean;
 }) {
+  const logo = LOGOS[card];
   return (
-    <span
+    <img
+      src={logo.url}
+      alt={logo.alt}
+      loading="lazy"
       className={cn(
-        CARD_META[card].accentClass,
-        "inline-flex items-center rounded-md border-2 border-card-accent-strong px-2.5 py-1 font-display text-sm font-bold tracking-tight text-card-accent-strong",
+        "h-9 w-auto object-contain sm:h-10",
+        !onLight && "rounded-md bg-white/95 p-1.5",
         className,
       )}
-    >
-      {CARD_META[card].label}
-    </span>
+    />
   );
 }
 
-export function BrandMarkRow({ className }: { className?: string }) {
+export function BrandMarkRow({
+  className,
+  onLight = true,
+}: {
+  className?: string;
+  onLight?: boolean;
+}) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-2", className)}>
+    <div className={cn("flex flex-wrap items-center gap-4", className)}>
       {CARD_TYPES.map((card) => (
-        <BrandMark key={card} card={card} />
+        <BrandMark key={card} card={card} onLight={onLight} />
       ))}
     </div>
   );
+}
+
+export function CardLabel({ card }: { card: CardType }) {
+  return <span className="font-display font-bold">{CARD_META[card].label}</span>;
 }
