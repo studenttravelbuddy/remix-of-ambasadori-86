@@ -342,7 +342,7 @@ export function SiteFooter() {
     <footer className="bg-brand-teal-deep py-12 text-primary-foreground">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <BrandMarkRow className="[&_span]:border-primary-foreground/40 [&_span]:text-primary-foreground" />
+          <BrandMarkRow onLight={false} />
           <p className="mt-4 max-w-md text-xs text-primary-foreground/70">
             Počet účastníkov programu je obmedzený. O zaradení do programu rozhoduje náš tím podľa
             aktuálnych kapacít a splnenia podmienok programu.
