@@ -47,6 +47,13 @@ export function ageOn(birthDate: string, reference = new Date()): number {
 const requiredText = (max: number, message: string) =>
   z.string().trim().min(2, { message }).max(max, { message: `Maximálne ${max} znakov.` });
 
+const videoUrl = z
+  .string()
+  .trim()
+  .max(500)
+  .regex(/^https?:\/\/\S+$/, { message: "Vlož odkaz na video (začína https://)." });
+
+
 export const applicationSchema = z
   .object({
     fullName: requiredText(100, "Zadaj meno a priezvisko."),
