@@ -43,7 +43,7 @@ export function HowItWorks() {
   const steps = [
     {
       title: "Natoč 3 videá",
-      text: "Krátke videá približne 15–30 sekúnd, stačí mobil. Témy sú nižšie, alebo príď s vlastným nápadom.",
+      text: "Krátke videá približne 30–60 sekúnd, stačí mobil. Témy sú nižšie, alebo príď s vlastným nápadom.",
     },
     {
       title: "Pošli nám ich",
