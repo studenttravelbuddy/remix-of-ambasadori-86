@@ -22,14 +22,14 @@ export const CARD_META: Record<
   },
   isic: {
     label: "ISIC",
-    tagline: "Pre študentov SŠ a VŠ",
-    eligibility: "Denné štúdium na strednej alebo vysokej škole.",
+    tagline: "Pre študentov ZŠ, SŠ a VŠ",
+    eligibility: "Denné štúdium na základnej, strednej alebo vysokej škole.",
     accentClass: "card-isic",
   },
   itic: {
     label: "ITIC",
     tagline: "Pre učiteľov a pedagógov",
-    eligibility: "Pedagogický zamestnanec s dostatočným rozsahom vyučovania.",
+    eligibility: "Pedagogický zamestnanec na plný úväzok.",
     accentClass: "card-itic",
   },
 };
