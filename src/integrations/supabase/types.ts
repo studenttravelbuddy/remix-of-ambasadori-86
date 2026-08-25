@@ -33,7 +33,7 @@ export type Database = {
           id: string
           instagram_handle: string | null
           job_position: string | null
-          motivation: string
+          motivation: string | null
           phone: string
           portfolio_url: string | null
           school_name: string | null
@@ -43,6 +43,9 @@ export type Database = {
           terms_accepted: boolean
           tiktok_handle: string | null
           updated_at: string
+          video1_url: string | null
+          video2_url: string | null
+          video3_url: string | null
         }
         Insert: {
           academic_year?: string | null
@@ -62,7 +65,7 @@ export type Database = {
           id?: string
           instagram_handle?: string | null
           job_position?: string | null
-          motivation: string
+          motivation?: string | null
           phone: string
           portfolio_url?: string | null
           school_name?: string | null
@@ -72,6 +75,9 @@ export type Database = {
           terms_accepted?: boolean
           tiktok_handle?: string | null
           updated_at?: string
+          video1_url?: string | null
+          video2_url?: string | null
+          video3_url?: string | null
         }
         Update: {
           academic_year?: string | null
@@ -91,7 +97,7 @@ export type Database = {
           id?: string
           instagram_handle?: string | null
           job_position?: string | null
-          motivation?: string
+          motivation?: string | null
           phone?: string
           portfolio_url?: string | null
           school_name?: string | null
@@ -101,6 +107,9 @@ export type Database = {
           terms_accepted?: boolean
           tiktok_handle?: string | null
           updated_at?: string
+          video1_url?: string | null
+          video2_url?: string | null
+          video3_url?: string | null
         }
         Relationships: []
       }
