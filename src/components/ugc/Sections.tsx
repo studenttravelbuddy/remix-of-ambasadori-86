@@ -131,7 +131,7 @@ export function HowItWorks() {
 
 export function VideoIdeas() {
   const ideas = [
-    { emoji: "🎬", text: "„3 veci, ktoré som zistil/a až po škole“" },
+    { emoji: "🎬", text: "„3 veci, ktoré som zistil/a až po/na škole“" },
     { emoji: "💸", text: "„Koľko som ušetril/a s preukazom?“" },
     { emoji: "🛒", text: "„Toto som s preukazom vôbec nečakal/a“" },
     { emoji: "🍔", text: "„Kam chodím s preukazom na zľavu“" },
