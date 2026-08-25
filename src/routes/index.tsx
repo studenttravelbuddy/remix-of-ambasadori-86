@@ -1,24 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { ApplicationForm } from "@/components/ugc/ApplicationForm";
+import {
+  Eligibility,
+  Faq,
+  Hero,
+  HowItWorks,
+  NoInfluencerNeeded,
+  Rewards,
+  SiteFooter,
+  VideoIdeas,
+} from "@/components/ugc/Sections";
+import { getRemainingSpots } from "@/lib/ambassador.functions";
+
+const title = "Ambasádorský program ISIC, ITIC a EURO<26 – 3 videá, preukaz zadarmo";
+const description =
+  "Staň sa ambasádorom ISIC, ITIC alebo EURO<26. Natoč 3 krátke UGC videá a získaj preukaz na rok zadarmo. Prihlás sa online, počet miest je obmedzený.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const fetchSpots = useServerFn(getRemainingSpots);
+  const { data } = useQuery({
+    queryKey: ["remaining-spots"],
+    queryFn: () => fetchSpots(),
+  });
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <Hero remaining={data?.remaining ?? null} />
+      <HowItWorks />
+      <VideoIdeas />
+      <NoInfluencerNeeded />
+      <Rewards />
+      <Eligibility />
+      <Faq />
+      <ApplicationForm />
+      <SiteFooter />
+    </main>
   );
 }
