@@ -10,43 +10,44 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ApiPublicPodmienkyRouteImport } from './routes/api/public/podmienky'
+import { Route as PodmienkyAmbasadorskehoProgramuRouteImport } from './routes/podmienky-ambasadorskeho-programu'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicPodmienkyRoute = ApiPublicPodmienkyRouteImport.update({
-  id: '/api/public/podmienky',
-  path: '/api/public/podmienky',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const PodmienkyAmbasadorskehoProgramuRoute =
+  PodmienkyAmbasadorskehoProgramuRouteImport.update({
+    id: '/podmienky-ambasadorskeho-programu',
+    path: '/podmienky-ambasadorskeho-programu',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api/public/podmienky': typeof ApiPublicPodmienkyRoute
+  '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api/public/podmienky': typeof ApiPublicPodmienkyRoute
+  '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api/public/podmienky': typeof ApiPublicPodmienkyRoute
+  '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/podmienky'
+  fullPaths: '/' | '/podmienky-ambasadorskeho-programu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/podmienky'
-  id: '__root__' | '/' | '/api/public/podmienky'
+  to: '/' | '/podmienky-ambasadorskeho-programu'
+  id: '__root__' | '/' | '/podmienky-ambasadorskeho-programu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApiPublicPodmienkyRoute: typeof ApiPublicPodmienkyRoute
+  PodmienkyAmbasadorskehoProgramuRoute: typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,11 +59,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/podmienky': {
-      id: '/api/public/podmienky'
-      path: '/api/public/podmienky'
-      fullPath: '/api/public/podmienky'
-      preLoaderRoute: typeof ApiPublicPodmienkyRouteImport
+    '/podmienky-ambasadorskeho-programu': {
+      id: '/podmienky-ambasadorskeho-programu'
+      path: '/podmienky-ambasadorskeho-programu'
+      fullPath: '/podmienky-ambasadorskeho-programu'
+      preLoaderRoute: typeof PodmienkyAmbasadorskehoProgramuRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -70,7 +71,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApiPublicPodmienkyRoute: ApiPublicPodmienkyRoute,
+  PodmienkyAmbasadorskehoProgramuRoute: PodmienkyAmbasadorskehoProgramuRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

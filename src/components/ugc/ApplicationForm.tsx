@@ -459,7 +459,7 @@ export function ApplicationForm() {
                         rel="noopener noreferrer"
                         className="font-semibold text-brand-teal-dark underline underline-offset-2"
                       >
-                        podmienkami ambasádorského programu (PDF)
+                        podmienkami ambasádorského programu
                       </a>{" "}
                       – zaškrtnutím potvrdzujem, že dodám 3 videá podľa podmienok a po ich schválení
                       dostanem preukaz na rok zadarmo. Podmienky prijímam digitálne, nič sa

@@ -147,7 +147,7 @@ export function Eligibility() {
             rel="noopener noreferrer"
             className="mt-4 inline-flex text-sm font-semibold text-brand-teal-dark underline underline-offset-4"
           >
-            Prečítať podmienky programu (PDF)
+            Prečítať podmienky programu
           </a>
         </div>
 
@@ -228,7 +228,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="hover:text-brand-teal"
           >
-            Podmienky programu (PDF)
+            Podmienky programu
           </a>
 
         </nav>
