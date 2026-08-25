@@ -22,6 +22,7 @@ import { BrandMark } from "@/components/ugc/BrandMark";
 import {
   CARD_META,
   CARD_TYPES,
+  TERMS_PDF_URL,
   applicationSchema,
   type ApplicationInput,
   type CardType,
