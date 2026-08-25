@@ -22,6 +22,7 @@ import { BrandMark } from "@/components/ugc/BrandMark";
 import {
   CARD_META,
   CARD_TYPES,
+  TERMS_PDF_URL,
   applicationSchema,
   type ApplicationInput,
   type CardType,
@@ -448,10 +449,38 @@ export function ApplicationForm() {
                     "eligibilityConfirmed",
                     "Potvrdzujem, že spĺňam podmienky nároku na zvolený preukaz.",
                   ],
-                  ["termsAccepted", "Súhlasím s podmienkami ambasádorského programu."],
+                  [
+                    "termsAccepted",
+                    <>
+                      Súhlasím s{" "}
+                      <a
+                        href={TERMS_PDF_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-brand-teal-dark underline underline-offset-2"
+                      >
+                        podmienkami ambasádorského programu (PDF)
+                      </a>{" "}
+                      – zaškrtnutím potvrdzujem, že dodám 3 videá podľa podmienok a po ich schválení
+                      dostanem preukaz na rok zadarmo. Podmienky prijímam digitálne, nič sa
+                      nepodpisuje.
+                    </>,
+                  ],
                   [
                     "contentUseAccepted",
-                    "Súhlasím s použitím vytvoreného obsahu v komunikácii ISIC / ITIC / EURO<26.",
+                    <>
+                      Súhlasím s použitím vytvoreného obsahu v komunikácii ISIC / ITIC / EURO&lt;26
+                      v rozsahu licencie podľa{" "}
+                      <a
+                        href={TERMS_PDF_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-brand-teal-dark underline underline-offset-2"
+                      >
+                        podmienok programu
+                      </a>
+                      .
+                    </>,
                   ],
                   ["gdprAccepted", "Súhlasím so spracovaním osobných údajov na účely programu."],
                 ] as const
@@ -477,6 +506,7 @@ export function ApplicationForm() {
                 />
               ))}
             </div>
+
 
             <p className="text-xs text-muted-foreground">
               Videá skontrolujeme a ozveme sa ti e-mailom. Ak ich schválime, dostaneš preukaz na rok

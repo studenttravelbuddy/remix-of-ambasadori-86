@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { BrandMark, BrandMarkRow } from "@/components/ugc/BrandMark";
-import { CARD_META, CARD_TYPES } from "@/lib/ambassador";
+import { CARD_META, CARD_TYPES, TERMS_PDF_URL } from "@/lib/ambassador";
 
 function scrollToForm() {
   document.getElementById("formular")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -132,6 +132,24 @@ export function Eligibility() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8 rounded-2xl border border-border bg-brand-teal-light p-6">
+          <p className="font-display text-base font-bold">Podmienky ambasádorského programu</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Nič sa nepodpisuje – podmienky (zmluvu o dielo a licenčnú zmluvu) prijmeš digitálne
+            zaškrtnutím súhlasu vo formulári. Znamená to, že dodáš 3 videá podľa podmienok a po ich
+            schválení dostaneš preukaz na rok zadarmo.
+          </p>
+          <a
+            href={TERMS_PDF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex text-sm font-semibold text-brand-teal-dark underline underline-offset-4"
+          >
+            Prečítať podmienky programu (PDF)
+          </a>
+        </div>
+
       </div>
     </section>
   );
@@ -203,6 +221,15 @@ export function SiteFooter() {
           <a href="#formular" className="hover:text-brand-teal">
             Poslať videá
           </a>
+          <a
+            href={TERMS_PDF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-brand-teal"
+          >
+            Podmienky programu (PDF)
+          </a>
+
         </nav>
       </div>
     </footer>
