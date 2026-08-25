@@ -423,8 +423,9 @@ export function SiteFooter() {
         <div>
           <BrandMarkRow onLight={false} />
           <p className="mt-4 max-w-md text-xs text-primary-foreground/70">
-            Počet účastníkov programu je obmedzený. O zaradení do programu rozhoduje náš tím podľa
-            aktuálnych kapacít a splnenia podmienok programu.
+            Program organizuje CKM SYTS. Počet účastníkov programu je obmedzený. O zaradení do
+            programu rozhoduje zástupca CKM SYTS podľa aktuálnych kapacít a splnenia podmienok
+            programu.
           </p>
         </div>
         <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
@@ -432,6 +433,9 @@ export function SiteFooter() {
             Ako to funguje
           </a>
           <a href="#podmienky" className="hover:text-brand-yellow">
+            Kto sa môže zapojiť
+          </a>
+          <a href="#podmienky-programu" className="hover:text-brand-yellow">
             Podmienky programu
           </a>
           <a href="#faq" className="hover:text-brand-yellow">
