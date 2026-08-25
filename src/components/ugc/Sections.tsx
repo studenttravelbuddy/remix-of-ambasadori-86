@@ -187,7 +187,7 @@ export function SiteFooter() {
         <div>
           <BrandMarkRow onLight={false} />
           <p className="mt-4 max-w-md text-xs text-primary-foreground/70">
-            Program organizuje CKM SYTS, vydavateľ preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.
+            Program organizuje združenie CKM SYTS, výhradný zástupca preukazov &nbsp;ISIC, ITIC a EURO&lt;26 na Slovensku.
           </p>
         </div>
         <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
