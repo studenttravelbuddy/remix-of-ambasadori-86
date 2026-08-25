@@ -221,6 +221,15 @@ export function SiteFooter() {
           <a href="#formular" className="hover:text-brand-teal">
             Poslať videá
           </a>
+          <a
+            href={TERMS_PDF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-brand-teal"
+          >
+            Podmienky programu (PDF)
+          </a>
+
         </nav>
       </div>
     </footer>
