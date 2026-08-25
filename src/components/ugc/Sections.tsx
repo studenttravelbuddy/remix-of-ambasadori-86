@@ -62,13 +62,13 @@ export function Hero({ remaining }: { remaining: number | null }) {
             <p className="font-display text-lg font-bold">Máš preukaz a baví ťa tvoriť videá?</p>
             <p className="mt-3 text-sm text-primary-foreground/80">
               Zapoj sa do ambasádorského programu a vytvor pre nás 3 krátke UGC videá. Ak ich
-              schválime a splníš podmienky programu, získaš od nás kupón na preukaz na rok bez
-              poplatku.
+              schválime a splníš podmienky programu, získaš od nás kupón do nášho e-shopu v hodnote
+              ceny členského poplatku a členskej karty na 1 rok.
             </p>
             <ul className="mt-5 space-y-3 text-sm">
               {[
                 "Stačí mobil, žiadna profesionálna technika",
-                "3 videá do 30–40 sekúnd",
+                "3 krátke videá, približne 15–30 sekúnd",
                 "Nemusíš byť influencer",
               ].map((item) => (
                 <li key={item} className="flex gap-3">
@@ -77,6 +77,7 @@ export function Hero({ remaining }: { remaining: number | null }) {
                 </li>
               ))}
             </ul>
+
           </div>
         </div>
       </div>
