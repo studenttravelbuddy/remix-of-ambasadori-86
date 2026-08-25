@@ -12,73 +12,27 @@ function scrollToForm() {
   document.getElementById("formular")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export function Hero({ remaining }: { remaining: number | null }) {
+export function Hero() {
   return (
-    <header className="relative overflow-hidden bg-brand-teal-deep text-primary-foreground">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-[26rem] w-[26rem] rounded-full bg-brand-teal/30 blur-3xl"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-brand-yellow/20 blur-3xl"
-      />
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-5 py-16 sm:py-24 lg:flex-row lg:items-center">
-        <div className="lg:w-3/5">
-          <p className="inline-flex items-center gap-2 rounded-full border border-brand-teal/50 bg-brand-teal/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em]">
-            Ambasádorský program
-            {remaining !== null && <span className="text-brand-yellow">zostáva {remaining} miest</span>}
-          </p>
-          <h1 className="mt-6 font-display text-4xl font-black leading-[1.05] text-balance-tight sm:text-6xl">
-            3 videá = <span className="text-brand-yellow">ISIC, ITIC alebo EURO&lt;26</span> na rok
-            zadarmo
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-primary-foreground/85">
-            Tvor obsah, ktorý baví mladých, a preukaz ti zaplatíme my. Staň sa naším ambasádorom.
-          </p>
-          <p className="mt-3 max-w-xl text-base text-primary-foreground/70">
-            Jednoduché. Ty tvoríš. My odmeňujeme.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="bg-brand-yellow text-brand-teal-deep hover:bg-brand-yellow/90"
-            >
-              Chcem sa zapojiť
-            </Button>
-            <a
-              href="#ako-to-funguje"
-              className="rounded-md border border-primary-foreground/30 px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-primary-foreground/10"
-            >
-              Ako to funguje
-            </a>
-          </div>
-          <BrandMarkRow className="mt-10" onLight={false} />
-        </div>
-
-        <div className="lg:w-2/5">
-          <div className="rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur">
-            <p className="font-display text-lg font-bold">Máš preukaz a baví ťa tvoriť videá?</p>
-            <p className="mt-3 text-sm text-primary-foreground/80">
-              Zapoj sa do ambasádorského programu a vytvor pre nás 3 krátke UGC videá. Ak ich
-              schválime a splníš podmienky programu, získaš od nás kupón do nášho e-shopu v hodnote
-              ceny členského poplatku a členskej karty na 1 rok.
-            </p>
-            <ul className="mt-5 space-y-3 text-sm">
-              {[
-                "Stačí mobil, žiadna profesionálna technika",
-                "3 krátke videá, približne 15–30 sekúnd",
-                "Nemusíš byť influencer",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand-yellow" />
-                  <span className="text-primary-foreground/85">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-          </div>
+    <header className="bg-brand-teal-dark text-primary-foreground">
+      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-5 py-16 sm:py-20">
+        <BrandMarkRow onLight={false} />
+        <h1 className="font-display text-4xl font-black leading-[1.05] text-balance-tight sm:text-5xl">
+          Natoč 3 krátke videá a máš <span className="text-brand-teal">ISIC, ITIC alebo
+          EURO&lt;26</span> na rok zadarmo.
+        </h1>
+        <p className="max-w-2xl text-lg text-primary-foreground/85">
+          Žiadne výberové konanie. Natoč videá na mobil, pošli nám ich vo formulári a keď ich
+          schválime, dostaneš preukaz zadarmo.
+        </p>
+        <div>
+          <Button
+            size="lg"
+            onClick={scrollToForm}
+            className="bg-brand-teal text-brand-teal-dark hover:bg-brand-teal/90"
+          >
+            Poslať videá
+          </Button>
         </div>
       </div>
     </header>
@@ -88,37 +42,27 @@ export function Hero({ remaining }: { remaining: number | null }) {
 export function HowItWorks() {
   const steps = [
     {
-      title: "Prihlás sa do programu",
-      text: "Vyplň registračný formulár a povedz nám o sebe. Prihlášky vyhodnotíme a vybraných záujemcov kontaktujeme – odoslanie formulára automaticky neznamená prijatie do programu.",
+      title: "Natoč 3 videá",
+      text: "Krátke videá približne 15–30 sekúnd, stačí mobil. Témy sú nižšie, alebo príď s vlastným nápadom.",
     },
     {
-      title: "Dohodneme sa na zadaní",
-      text: "Po zaradení do programu podpíšeš Zmluvu o dielo a dostaneš konkrétne zadanie – tému, požadované prvky a základné technické požiadavky.",
+      title: "Pošli nám ich",
+      text: "Nahraj videá napríklad na Disk Google, Dropbox alebo WeTransfer a odkazy vlož do formulára.",
     },
     {
-      title: "Natoč 3 krátke videá",
-      text: "Videá približne 15–30 sekúnd, pokojne na mobil. Nemusia vyzerať ako reklama – práve naopak, chceme autentický obsah zo života mladých.",
-    },
-    {
-      title: "Schválime ich a máš preukaz",
-      text: "Po odovzdaní a schválení všetkých 3 videí ti poskytneme kupón do nášho e-shopu v hodnote ceny členského poplatku a členskej karty na 1 rok.",
+      title: "Schválime = preukaz zadarmo",
+      text: "Ak videá schválime, dostaneš preukaz ISIC, ITIC alebo EURO<26 na rok zadarmo.",
     },
   ];
 
-
   return (
-    <section id="ako-to-funguje" className="bg-background py-20">
-      <div className="mx-auto max-w-6xl px-5">
+    <section id="ako-to-funguje" className="bg-background py-16">
+      <div className="mx-auto max-w-5xl px-5">
         <h2 className="font-display text-3xl font-black sm:text-4xl">Ako to funguje?</h2>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-5 sm:grid-cols-3">
           {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className="relative rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg"
-            >
-              <span className="font-display text-4xl font-black text-brand-teal">
-                {index + 1}
-              </span>
+            <div key={step.title} className="rounded-2xl border border-border bg-card p-6">
+              <span className="font-display text-4xl font-black text-brand-teal">{index + 1}</span>
               <h3 className="mt-3 font-display text-lg font-bold">{step.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{step.text}</p>
             </div>
@@ -136,19 +80,17 @@ export function VideoIdeas() {
     { emoji: "🛒", text: "„Toto som s preukazom vôbec nečakal/a“" },
     { emoji: "👥", text: "„Kam chodím s preukazom na zľavu“" },
     { emoji: "✈️", text: "„Ako využiť preukaz na cestovanie“" },
-    { emoji: "😂", text: "Vtipná situácia zo života mladého človeka" },
-    { emoji: "📱", text: "Reakcia alebo krátky trend s prirodzeným zapojením preukazu" },
-    { emoji: "💡", text: "Pokojne príď aj s vlastným nápadom!" },
+    { emoji: "💡", text: "Alebo tvoj vlastný nápad" },
   ];
 
   return (
-    <section className="bg-brand-teal-light py-20">
-      <div className="mx-auto max-w-6xl px-5">
+    <section className="bg-brand-teal-light py-16">
+      <div className="mx-auto max-w-5xl px-5">
         <h2 className="font-display text-3xl font-black sm:text-4xl">Čo môžeš natáčať?</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Nemusíš vymýšľať nič komplikované. Chceme videá, ktoré by si si pozrel/a aj ty sám/sama.
+          Nemusíš byť influencer ani mať techniku. Chceme obsah, ktorý nepôsobí ako reklama.
         </p>
-        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ideas.map((idea) => (
             <li
               key={idea.text}
@@ -166,94 +108,17 @@ export function VideoIdeas() {
   );
 }
 
-export function NoInfluencerNeeded() {
-  return (
-    <section className="bg-background py-20">
-      <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-2">
-        <div>
-          <h2 className="font-display text-3xl font-black sm:text-4xl">
-            Nemusíš byť influencer
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Toto nie je súťaž o počet followerov. Nemusíš mať 10 000 sledovateľov, profesionálnu
-            kameru ani skúsenosti s reklamou. Chceme obsah, ktorý nepôsobí ako reklama.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            { title: "Prirodzenosť", text: "Vieš byť sám/sama sebou pred kamerou." },
-            { title: "Nápady", text: "Máš vlastný pohľad a vieš zaujať." },
-            { title: "Chuť tvoriť", text: "Baví ťa robiť krátke videá." },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border-2 border-brand-yellow/70 bg-brand-yellow/10 p-5"
-            >
-              <h3 className="font-display text-base font-bold">{item.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function Rewards() {
-  return (
-    <section className="bg-brand-teal-deep py-20 text-primary-foreground">
-      <div className="mx-auto max-w-6xl px-5">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">Čo za to dostaneš?</h2>
-        <div className="mt-8 rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 p-7">
-          <p className="font-display text-2xl font-bold">
-            🎟️ Preukaz na ďalší rok zadarmo
-          </p>
-          <p className="mt-3 max-w-3xl text-primary-foreground/80">
-            Za 3 schválené UGC videá ti poskytneme kupón do nášho eshopu v hodnote ceny členského
-            poplatku a členskej karty ISIC / ITIC / EURO&lt;26 na 1 rok podľa platných podmienok
-            programu.
-          </p>
-        </div>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            "Tvoje videá použijeme na našich sociálnych sieťach",
-            "Získaš skúsenosť s tvorbou obsahu pre reálnu značku",
-            "Tvoje videá sa môžu dostať k tisícom mladých ľudí",
-            "Spoluprácu si môžeš dať do portfólia",
-          ].map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl border border-primary-foreground/15 p-5 text-sm text-primary-foreground/85"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 rounded-2xl bg-brand-yellow/95 p-6 text-brand-teal-deep">
-          <p className="font-display text-xl font-black">Koľko videí treba? 3 videá.</p>
-          <p className="mt-2 text-sm font-medium">
-            Nie 30. Nie každý týždeň. Nie donekonečna. 😎 Vytvoríš tri dohodnuté videá, my ich
-            schválime a podmienky programu sú splnené.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export function Eligibility() {
   return (
-    <section id="podmienky" className="bg-background py-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">Kto sa môže zapojiť?</h2>
-        <p className="mt-4 max-w-3xl text-muted-foreground">
-          Program je určený pre držiteľov (aj budúcich držiteľov) preukazov ISIC, ITIC a
-          EURO&lt;26, ktorí spĺňajú podmienky nároku na zvolený preukaz, chcú vytvárať krátky video
-          obsah, dokážu odovzdať 3 UGC videá podľa zadania a súhlasia s podmienkami použitia
-          vytvoreného obsahu.
+    <section id="podmienky" className="bg-background py-16">
+      <div className="mx-auto max-w-5xl px-5">
+        <h2 className="font-display text-3xl font-black sm:text-4xl">Ktorý preukaz môžeš získať?</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Vo formulári zvoľ preukaz, o ktorý máš záujem – musíš na neho mať nárok. Zapojiť sa môžu
+          noví aj existujúci držitelia.
         </p>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
           {CARD_TYPES.map((card) => (
             <div
               key={card}
@@ -267,138 +132,37 @@ export function Eligibility() {
             </div>
           ))}
         </div>
-
-        <div className="mt-10 rounded-2xl border border-border bg-secondary p-6">
-          <h3 className="font-display text-lg font-bold">Čo znamená „schválené video“?</h3>
-          <ul className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <li>• zodpovedá vopred dohodnutému zadaniu,</li>
-            <li>• spĺňa dohodnuté technické požiadavky a obsahuje požadované prvky,</li>
-            <li>• spĺňa kvalitatívne a obsahové požiadavky programu,</li>
-            <li>• je vhodné na komunikáciu ISIC / ITIC / EURO&lt;26 a ich výhod,</li>
-            <li>• a môžeme ho použiť na dohodnuté komunikačné účely.</li>
-          </ul>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Ak video neschválime, dáme ti spätnú väzbu a podľa Zmluvy o dielo ho bude možné upraviť
-            alebo natočiť nanovo.
-          </p>
-        </div>
-
-        <p className="mt-6 text-sm font-semibold text-brand-teal-dark">
-          Počet miest v programe je obmedzený – ročne prijímame približne 100 – 200 účastníkov. O
-          zaradení rozhoduje zástupca CKM SYTS podľa aktuálnych kapacít a vhodnosti uchádzača.
-        </p>
       </div>
     </section>
   );
 }
-
-export function ProgramTerms() {
-  const items = [
-    {
-      title: "O programe",
-      text: "UGC ambasádorský program občianskeho združenia CKM SYTS, ktoré vydáva karty EURO<26, ISIC a ITIC na Slovensku, je určený pre držiteľov kariet, ktorí chcú tvoriť krátky autentický video obsah. Princíp: 3 schválené UGC videá = preukaz na ďalšie obdobie zadarmo.",
-    },
-    {
-      title: "Kapacita programu",
-      text: "Predpokladaná kapacita je 100 – 200 účastníkov ročne. O zaradení rozhoduje zástupca CKM SYTS. Odoslanie registračného formulára automaticky neznamená prijatie do programu.",
-    },
-    {
-      title: "Tvorba videí",
-      text: "Videá sa natáčajú podľa zadania od zástupcu CKM SYTS. Preferovaný formát sú krátke mobilné videá, približne 15 – 30 sekúnd. Nemusia pôsobiť ako profesionálna reklama.",
-    },
-    {
-      title: "Odmena",
-      text: "Odmenou za splnenie programu je úhrada ceny členského poplatku a členskej karty na ďalšie obdobie formou kupónu do e-shopu. Nárok vzniká po odovzdaní a schválení všetkých 3 videí a splnení ostatných podmienok. Karta nie je odmenou za samotné prihlásenie.",
-    },
-    {
-      title: "Použitie obsahu",
-      text: "Schválené videá môžeme použiť na sociálnych sieťach, webových stránkach, v online kampaniach a ďalšej marketingovej komunikácii. Konkrétny rozsah a obdobie použitia upravuje Zmluva o dielo.",
-    },
-    {
-      title: "Záverečné ustanovenia",
-      text: "CKM SYTS si vyhradzuje právo program upraviť, pozastaviť alebo ukončiť z kapacitných, organizačných alebo technických dôvodov. Aktuálne podmienky a dostupná kapacita sú komunikované na tejto podstránke a v registračnom formulári.",
-    },
-  ];
-
-  return (
-    <section id="podmienky-programu" className="bg-secondary py-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">Podmienky programu</h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          Zhrnutie najdôležitejších bodov. Úplné podmienky UGC ambasádorského programu budú
-          zverejnené aj ako PDF dokument.
-        </p>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {items.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="font-display text-base font-bold">{item.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function FinalCta() {
-  return (
-    <section className="bg-brand-teal py-16 text-primary-foreground">
-      <div className="mx-auto max-w-3xl px-5 text-center">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">
-          Chceš preukaz zadarmo a zároveň si skúsiť tvorbu obsahu?
-        </h2>
-        <p className="mt-4 text-primary-foreground/90">
-          Vyplň formulár a povedz nám niečo o sebe. Máš už skúsenosti s UGC? Pošli nám ukážku.
-          Nemáš? Nevadí – stačí nám ukázať, že vieš zaujať pred kamerou.
-        </p>
-        <Button
-          size="lg"
-          onClick={scrollToForm}
-          className="mt-8 bg-brand-yellow text-brand-teal-deep hover:bg-brand-yellow/90"
-        >
-          Chcem sa stať ambasádorom
-        </Button>
-      </div>
-    </section>
-  );
-}
-
 
 export function Faq() {
   const faqs = [
     {
       q: "Musím mať veľa followerov?",
-      a: "Nie. Program nie je postavený na počte followerov. Hľadáme najmä ľudí, ktorí dokážu vytvoriť prirodzený a zaujímavý video obsah.",
+      a: "Nie. Nesleduje sa počet followerov ani skúsenosti s tvorbou obsahu.",
     },
     {
-      q: "Musím mať skúsenosti s UGC?",
-      a: "Nie. Ak si ešte UGC video netvoril/a, nevadí. Zadanie a základné požiadavky dostaneš od nás.",
+      q: "Ako pošlem videá?",
+      a: "Nahraj ich na Disk Google, Dropbox, WeTransfer alebo iné úložisko a do formulára vlož odkazy na všetky 3 videá.",
     },
     {
-      q: "Čo ak moje video neschválite?",
-      a: "Dáme ti spätnú väzbu a podľa podmienok programu bude možné video upraviť alebo natočiť nanovo.",
+      q: "Čo ak video neschválite?",
+      a: "Dáme ti spätnú väzbu a video môžeš upraviť alebo natočiť nanovo.",
     },
     {
-      q: "Kde sa moje videá môžu objaviť?",
-      a: "Podľa dohody môžeme schválené videá využiť v komunikácii ISIC / ITIC / EURO<26, napríklad na sociálnych sieťach, webových stránkach alebo v online kampaniach. Konkrétne podmienky použitia obsahu sú súčasťou platných podmienok programu.",
-    },
-    {
-      q: "Koľko ľudí sa môže zapojiť?",
-      a: "Program má obmedzenú kapacitu, ročne prijímame približne 100–200 ambasádorov. Aktuálny počet dostupných miest je uvedený pri formulári.",
-    },
-    {
-      q: "Dostanem kartu okamžite?",
-      a: "Karta zdarma je odmenou za splnenie podmienok programu, teda za 3 nami schválené videá. Po splnení podmienok ti poskytneme kupón do nášho eshopu.",
+      q: "Kde sa moje videá objavia?",
+      a: "Schválené videá môžeme použiť v komunikácii ISIC / ITIC / EURO<26 – najmä na sociálnych sieťach, webe a v online kampaniach.",
     },
     {
       q: "Musím už mať preukaz?",
-      a: "Nie. Zapojiť sa môžu existujúci držitelia aj tí, ktorí preukaz ešte nemajú – vo formulári len uveď, o ktorý preukaz máš záujem a potvrď, že naň máš nárok.",
+      a: "Nie. Stačí, že máš na zvolený preukaz nárok a potvrdíš to vo formulári.",
     },
   ];
 
   return (
-    <section id="faq" className="bg-brand-teal-light py-20">
+    <section id="faq" className="bg-brand-teal-light py-16">
       <div className="mx-auto max-w-3xl px-5">
         <h2 className="font-display text-3xl font-black sm:text-4xl">Časté otázky</h2>
         <Accordion type="single" collapsible className="mt-8">
@@ -418,31 +182,26 @@ export function Faq() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-teal-deep py-12 text-primary-foreground">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="bg-brand-teal-dark py-10 text-primary-foreground">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6 px-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <BrandMarkRow onLight={false} />
           <p className="mt-4 max-w-md text-xs text-primary-foreground/70">
-            Program organizuje CKM SYTS. Počet účastníkov programu je obmedzený. O zaradení do
-            programu rozhoduje zástupca CKM SYTS podľa aktuálnych kapacít a splnenia podmienok
-            programu.
+            Program organizuje CKM SYTS, vydavateľ preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.
           </p>
         </div>
         <nav className="flex flex-col gap-2 text-sm text-primary-foreground/80">
-          <a href="#ako-to-funguje" className="hover:text-brand-yellow">
+          <a href="#ako-to-funguje" className="hover:text-brand-teal">
             Ako to funguje
           </a>
-          <a href="#podmienky" className="hover:text-brand-yellow">
-            Kto sa môže zapojiť
+          <a href="#podmienky" className="hover:text-brand-teal">
+            Preukazy
           </a>
-          <a href="#podmienky-programu" className="hover:text-brand-yellow">
-            Podmienky programu
-          </a>
-          <a href="#faq" className="hover:text-brand-yellow">
+          <a href="#faq" className="hover:text-brand-teal">
             Časté otázky
           </a>
-          <a href="#formular" className="hover:text-brand-yellow">
-            Prihláška
+          <a href="#formular" className="hover:text-brand-teal">
+            Poslať videá
           </a>
         </nav>
       </div>

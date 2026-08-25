@@ -46,9 +46,11 @@ const defaultValues = {
   teachingScope: "",
   instagramHandle: "",
   tiktokHandle: "",
-  portfolioUrl: "",
+  video1Url: "",
+  video2Url: "",
+  video3Url: "",
   motivation: "",
-  experience: "",
+
   eligibilityConfirmed: false as unknown as true,
   termsAccepted: false as unknown as true,
   contentUseAccepted: false as unknown as true,
@@ -85,11 +87,10 @@ export function ApplicationForm() {
     return (
       <section id="formular" className="bg-secondary py-20">
         <div className="mx-auto max-w-2xl px-5 text-center">
-          <h2 className="font-display text-3xl font-black sm:text-4xl">Prihláška je odoslaná 🎉</h2>
+          <h2 className="font-display text-3xl font-black sm:text-4xl">Videá sú odoslané 🎉</h2>
           <p className="mt-4 text-muted-foreground">
-            Ďakujeme! Prihlášku sme dostali. Ozveme sa ti e-mailom – ak ťa zaradíme do programu,
-            pošleme ti presné zadanie pre 3 videá a ďalšie kroky. Počet miest je obmedzený, preto
-            výber môže chvíľu trvať.
+            Ďakujeme! Videá si prezrieme a ozveme sa ti e-mailom. Ak ich schválime, dostaneš preukaz
+            na rok zadarmo.
           </p>
         </div>
       </section>
@@ -99,11 +100,11 @@ export function ApplicationForm() {
   return (
     <section id="formular" className="bg-secondary py-20">
       <div className="mx-auto max-w-3xl px-5">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">Prihláška ambasádora</h2>
+        <h2 className="font-display text-3xl font-black sm:text-4xl">Pošli nám svoje videá</h2>
         <p className="mt-3 text-muted-foreground">
-          Vyplň formulár, vyber si preukaz a potvrď, že naň máš nárok. Vyplnenie zaberie približne 5
-          minút.
+          Vyplň základné údaje, zvoľ preukaz, na ktorý máš nárok, a vlož odkazy na 3 videá.
         </p>
+
 
         <Form {...form}>
           <form
@@ -364,7 +365,39 @@ export function ApplicationForm() {
               </p>
             )}
 
-            <div className="grid gap-5 sm:grid-cols-3">
+            <div className="space-y-5 rounded-2xl border-2 border-brand-teal/40 bg-brand-teal-light p-5">
+              <div>
+                <h3 className="font-display text-lg font-bold">Tvoje 3 videá</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Nahraj videá na Disk Google, Dropbox, WeTransfer alebo iné úložisko a vlož sem
+                  odkazy. Videá musia byť prístupné na prezretie.
+                </p>
+              </div>
+              {(
+                [
+                  ["video1Url", "Odkaz na video 1"],
+                  ["video2Url", "Odkaz na video 2"],
+                  ["video3Url", "Odkaz na video 3"],
+                ] as const
+              ).map(([name, label]) => (
+                <FormField
+                  key={name}
+                  control={form.control}
+                  name={name}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{label}</FormLabel>
+                      <FormControl>
+                        <Input placeholder="https://..." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              ))}
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="instagramHandle"
@@ -391,19 +424,6 @@ export function ApplicationForm() {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="portfolioUrl"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Ukážka obsahu (nepovinné)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="https://..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
             </div>
 
             <FormField
@@ -411,28 +431,15 @@ export function ApplicationForm() {
               name="motivation"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Prečo práve ty?</FormLabel>
+                  <FormLabel>Chceš nám niečo dopísať? (nepovinné)</FormLabel>
                   <FormControl>
-                    <Textarea rows={4} placeholder="Napíš nám niečo o sebe a svojich nápadoch." {...field} />
+                    <Textarea rows={3} placeholder="Napríklad k čomu sa videá vzťahujú." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="experience"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Skúsenosti s tvorbou obsahu (nepovinné)</FormLabel>
-                  <FormControl>
-                    <Textarea rows={3} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
 
             <div className="space-y-3">
               {(
@@ -472,8 +479,8 @@ export function ApplicationForm() {
             </div>
 
             <p className="text-xs text-muted-foreground">
-              Odoslanie registračného formulára automaticky neznamená prijatie do programu. Prihlášky
-              vyhodnotí zástupca CKM SYTS podľa aktuálnej kapacity a vybraných záujemcov kontaktuje.
+              Videá skontrolujeme a ozveme sa ti e-mailom. Ak ich schválime, dostaneš preukaz na rok
+              zadarmo.
             </p>
 
             <Button
@@ -482,8 +489,9 @@ export function ApplicationForm() {
               disabled={form.formState.isSubmitting}
               className="w-full sm:w-auto"
             >
-              {form.formState.isSubmitting ? "Odosielam…" : "Odoslať prihlášku"}
+              {form.formState.isSubmitting ? "Odosielam…" : "Poslať videá"}
             </Button>
+
 
           </form>
         </Form>

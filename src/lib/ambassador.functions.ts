@@ -23,11 +23,15 @@ export const submitApplication = createServerFn({ method: "POST" })
       teaching_scope: data.teachingScope || null,
       instagram_handle: data.instagramHandle || null,
       tiktok_handle: data.tiktokHandle || null,
-      portfolio_url: data.portfolioUrl || null,
-      motivation: data.motivation,
-      experience: data.experience || null,
+      portfolio_url: null,
+      video1_url: data.video1Url,
+      video2_url: data.video2Url,
+      video3_url: data.video3Url,
+      motivation: data.motivation || null,
+      experience: null,
       eligibility_confirmed: data.eligibilityConfirmed,
       terms_accepted: data.termsAccepted,
+
       content_use_accepted: data.contentUseAccepted,
       gdpr_accepted: data.gdprAccepted,
     });
