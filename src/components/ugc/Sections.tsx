@@ -89,21 +89,22 @@ export function HowItWorks() {
   const steps = [
     {
       title: "Prihlás sa do programu",
-      text: "Vyplň formulár a povedz nám o sebe. Vyberieme ambasádorov podľa kapacity a splnenia podmienok.",
+      text: "Vyplň registračný formulár a povedz nám o sebe. Prihlášky vyhodnotíme a vybraných záujemcov kontaktujeme – odoslanie formulára automaticky neznamená prijatie do programu.",
+    },
+    {
+      title: "Dohodneme sa na zadaní",
+      text: "Po zaradení do programu podpíšeš Zmluvu o dielo a dostaneš konkrétne zadanie – tému, požadované prvky a základné technické požiadavky.",
     },
     {
       title: "Natoč 3 krátke videá",
-      text: "Videá do 30–40 sekúnd, pokojne na mobil. Nemusia vyzerať ako reklama – práve naopak, chceme autentický obsah zo života mladých.",
+      text: "Videá približne 15–30 sekúnd, pokojne na mobil. Nemusia vyzerať ako reklama – práve naopak, chceme autentický obsah zo života mladých.",
     },
     {
-      title: "My ich schválime",
-      text: "Videá nám pošleš na schválenie. Ak spĺňajú zadanie a dohodnuté podmienky, máme hotovo.",
-    },
-    {
-      title: "Preukaz máš zadarmo",
-      text: "Po splnení podmienok ti pošleme kupón do nášho eshopu v hodnote členského poplatku a karty na 1 rok.",
+      title: "Schválime ich a máš preukaz",
+      text: "Po odovzdaní a schválení všetkých 3 videí ti poskytneme kupón do nášho e-shopu v hodnote ceny členského poplatku a členskej karty na 1 rok.",
     },
   ];
+
 
   return (
     <section id="ako-to-funguje" className="bg-background py-20">
