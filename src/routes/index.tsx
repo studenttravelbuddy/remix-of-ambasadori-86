@@ -1,25 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 
 import { ApplicationForm } from "@/components/ugc/ApplicationForm";
 import {
   Eligibility,
   Faq,
-  FinalCta,
-  ProgramTerms,
   Hero,
   HowItWorks,
-  NoInfluencerNeeded,
-  Rewards,
   SiteFooter,
   VideoIdeas,
 } from "@/components/ugc/Sections";
-import { getRemainingSpots } from "@/lib/ambassador.functions";
 
-const title = "Ambasádorský program ISIC, ITIC a EURO<26 – 3 videá, preukaz zadarmo";
+const title = "3 videá = ISIC, ITIC alebo EURO<26 na rok zadarmo";
 const description =
-  "Staň sa ambasádorom ISIC, ITIC alebo EURO<26. Natoč 3 krátke UGC videá a získaj preukaz na rok zadarmo. Prihlás sa online, počet miest je obmedzený.";
+  "Natoč 3 krátke videá na mobil, pošli nám ich a keď ich schválime, získaš preukaz ISIC, ITIC alebo EURO<26 na rok zadarmo. Bez výberového konania.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,25 +29,16 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const fetchSpots = useServerFn(getRemainingSpots);
-  const { data } = useQuery({
-    queryKey: ["remaining-spots"],
-    queryFn: () => fetchSpots(),
-  });
-
   return (
     <main>
-      <Hero remaining={data?.remaining ?? null} />
+      <Hero />
       <HowItWorks />
       <VideoIdeas />
-      <NoInfluencerNeeded />
-      <Rewards />
       <Eligibility />
-      <ProgramTerms />
       <Faq />
-      <FinalCta />
       <ApplicationForm />
       <SiteFooter />
     </main>
   );
 }
+
