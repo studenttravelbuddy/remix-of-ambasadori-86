@@ -22,11 +22,11 @@ import { BrandMark } from "@/components/ugc/BrandMark";
 import {
   CARD_META,
   CARD_TYPES,
-  TERMS_PDF_URL,
   applicationSchema,
   type ApplicationInput,
   type CardType,
 } from "@/lib/ambassador";
+import { TERMS_PDF_URL } from "@/lib/ambassador-assets";
 import { submitApplication } from "@/lib/ambassador.functions";
 import { cn } from "@/lib/utils";
 
