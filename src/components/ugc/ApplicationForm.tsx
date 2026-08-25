@@ -85,11 +85,10 @@ export function ApplicationForm() {
     return (
       <section id="formular" className="bg-secondary py-20">
         <div className="mx-auto max-w-2xl px-5 text-center">
-          <h2 className="font-display text-3xl font-black sm:text-4xl">Prihláška je odoslaná 🎉</h2>
+          <h2 className="font-display text-3xl font-black sm:text-4xl">Videá sú odoslané 🎉</h2>
           <p className="mt-4 text-muted-foreground">
-            Ďakujeme! Prihlášku sme dostali. Ozveme sa ti e-mailom – ak ťa zaradíme do programu,
-            pošleme ti presné zadanie pre 3 videá a ďalšie kroky. Počet miest je obmedzený, preto
-            výber môže chvíľu trvať.
+            Ďakujeme! Videá si prezrieme a ozveme sa ti e-mailom. Ak ich schválime, dostaneš preukaz
+            na rok zadarmo.
           </p>
         </div>
       </section>
@@ -99,11 +98,11 @@ export function ApplicationForm() {
   return (
     <section id="formular" className="bg-secondary py-20">
       <div className="mx-auto max-w-3xl px-5">
-        <h2 className="font-display text-3xl font-black sm:text-4xl">Prihláška ambasádora</h2>
+        <h2 className="font-display text-3xl font-black sm:text-4xl">Pošli nám svoje videá</h2>
         <p className="mt-3 text-muted-foreground">
-          Vyplň formulár, vyber si preukaz a potvrď, že naň máš nárok. Vyplnenie zaberie približne 5
-          minút.
+          Vyplň základné údaje, zvoľ preukaz, na ktorý máš nárok, a vlož odkazy na 3 videá.
         </p>
+
 
         <Form {...form}>
           <form
