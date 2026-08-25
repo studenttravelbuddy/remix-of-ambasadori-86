@@ -82,21 +82,11 @@ export const applicationSchema = z
     teachingScope: z.string().trim().max(100).optional().or(z.literal("")),
     instagramHandle: z.string().trim().max(60).optional().or(z.literal("")),
     tiktokHandle: z.string().trim().max(60).optional().or(z.literal("")),
-    portfolioUrl: z
-      .string()
-      .trim()
-      .max(300)
-      .optional()
-      .or(z.literal(""))
-      .refine((value) => !value || /^https?:\/\/\S+$/.test(value), {
-        message: "Zadaj platný odkaz (začína https://).",
-      }),
-    motivation: z
-      .string()
-      .trim()
-      .min(30, { message: "Napíš aspoň 30 znakov, nech ťa vieme spoznať." })
-      .max(1500, { message: "Maximálne 1500 znakov." }),
-    experience: z.string().trim().max(1000).optional().or(z.literal("")),
+    video1Url: videoUrl,
+    video2Url: videoUrl,
+    video3Url: videoUrl,
+    motivation: z.string().trim().max(1500).optional().or(z.literal("")),
+
     eligibilityConfirmed: z.literal(true, {
       errorMap: () => ({ message: "Potvrď, že máš na zvolený preukaz nárok." }),
     }),
