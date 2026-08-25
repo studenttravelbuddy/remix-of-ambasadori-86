@@ -478,8 +478,8 @@ export function ApplicationForm() {
             </div>
 
             <p className="text-xs text-muted-foreground">
-              Odoslanie registračného formulára automaticky neznamená prijatie do programu. Prihlášky
-              vyhodnotí zástupca CKM SYTS podľa aktuálnej kapacity a vybraných záujemcov kontaktuje.
+              Videá skontrolujeme a ozveme sa ti e-mailom. Ak ich schválime, dostaneš preukaz na rok
+              zadarmo.
             </p>
 
             <Button
@@ -488,8 +488,9 @@ export function ApplicationForm() {
               disabled={form.formState.isSubmitting}
               className="w-full sm:w-auto"
             >
-              {form.formState.isSubmitting ? "Odosielam…" : "Odoslať prihlášku"}
+              {form.formState.isSubmitting ? "Odosielam…" : "Poslať videá"}
             </Button>
+
 
           </form>
         </Form>
