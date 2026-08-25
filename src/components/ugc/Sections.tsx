@@ -271,22 +271,99 @@ export function Eligibility() {
         <div className="mt-10 rounded-2xl border border-border bg-secondary p-6">
           <h3 className="font-display text-lg font-bold">Čo znamená „schválené video“?</h3>
           <ul className="mt-3 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-            <li>• spĺňa dohodnuté zadanie a dĺžku 30–40 sekúnd,</li>
-            <li>• má technicky použiteľný obraz a zvuk,</li>
-            <li>• je autentické a originálne (bez cudzieho obsahu),</li>
-            <li>• je vhodné na komunikáciu ISIC / ITIC / EURO&lt;26,</li>
-            <li>• a môžeme ho použiť na dohodnuté účely.</li>
+            <li>• zodpovedá vopred dohodnutému zadaniu,</li>
+            <li>• spĺňa dohodnuté technické požiadavky a obsahuje požadované prvky,</li>
+            <li>• spĺňa kvalitatívne a obsahové požiadavky programu,</li>
+            <li>• je vhodné na komunikáciu ISIC / ITIC / EURO&lt;26 a ich výhod,</li>
+            <li>• a môžeme ho použiť na dohodnuté komunikačné účely.</li>
           </ul>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Ak video neschválime, dáme ti spätnú väzbu a podľa Zmluvy o dielo ho bude možné upraviť
+            alebo natočiť nanovo.
+          </p>
         </div>
 
         <p className="mt-6 text-sm font-semibold text-brand-teal-dark">
-          Počet miest v programe je obmedzený. O zaradení rozhoduje náš tím podľa aktuálnych
-          kapacít a splnenia podmienok.
+          Počet miest v programe je obmedzený – ročne prijímame približne 100 – 200 účastníkov. O
+          zaradení rozhoduje zástupca CKM SYTS podľa aktuálnych kapacít a vhodnosti uchádzača.
         </p>
       </div>
     </section>
   );
 }
+
+export function ProgramTerms() {
+  const items = [
+    {
+      title: "O programe",
+      text: "UGC ambasádorský program občianskeho združenia CKM SYTS, ktoré vydáva karty EURO<26, ISIC a ITIC na Slovensku, je určený pre držiteľov kariet, ktorí chcú tvoriť krátky autentický video obsah. Princíp: 3 schválené UGC videá = preukaz na ďalšie obdobie zadarmo.",
+    },
+    {
+      title: "Kapacita programu",
+      text: "Predpokladaná kapacita je 100 – 200 účastníkov ročne. O zaradení rozhoduje zástupca CKM SYTS. Odoslanie registračného formulára automaticky neznamená prijatie do programu.",
+    },
+    {
+      title: "Tvorba videí",
+      text: "Videá sa natáčajú podľa zadania od zástupcu CKM SYTS. Preferovaný formát sú krátke mobilné videá, približne 15 – 30 sekúnd. Nemusia pôsobiť ako profesionálna reklama.",
+    },
+    {
+      title: "Odmena",
+      text: "Odmenou za splnenie programu je úhrada ceny členského poplatku a členskej karty na ďalšie obdobie formou kupónu do e-shopu. Nárok vzniká po odovzdaní a schválení všetkých 3 videí a splnení ostatných podmienok. Karta nie je odmenou za samotné prihlásenie.",
+    },
+    {
+      title: "Použitie obsahu",
+      text: "Schválené videá môžeme použiť na sociálnych sieťach, webových stránkach, v online kampaniach a ďalšej marketingovej komunikácii. Konkrétny rozsah a obdobie použitia upravuje Zmluva o dielo.",
+    },
+    {
+      title: "Záverečné ustanovenia",
+      text: "CKM SYTS si vyhradzuje právo program upraviť, pozastaviť alebo ukončiť z kapacitných, organizačných alebo technických dôvodov. Aktuálne podmienky a dostupná kapacita sú komunikované na tejto podstránke a v registračnom formulári.",
+    },
+  ];
+
+  return (
+    <section id="podmienky-programu" className="bg-secondary py-20">
+      <div className="mx-auto max-w-6xl px-5">
+        <h2 className="font-display text-3xl font-black sm:text-4xl">Podmienky programu</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Zhrnutie najdôležitejších bodov. Úplné podmienky UGC ambasádorského programu budú
+          zverejnené aj ako PDF dokument.
+        </p>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {items.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-border bg-card p-6">
+              <h3 className="font-display text-base font-bold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function FinalCta() {
+  return (
+    <section className="bg-brand-teal py-16 text-primary-foreground">
+      <div className="mx-auto max-w-3xl px-5 text-center">
+        <h2 className="font-display text-3xl font-black sm:text-4xl">
+          Chceš preukaz zadarmo a zároveň si skúsiť tvorbu obsahu?
+        </h2>
+        <p className="mt-4 text-primary-foreground/90">
+          Vyplň formulár a povedz nám niečo o sebe. Máš už skúsenosti s UGC? Pošli nám ukážku.
+          Nemáš? Nevadí – stačí nám ukázať, že vieš zaujať pred kamerou.
+        </p>
+        <Button
+          size="lg"
+          onClick={scrollToForm}
+          className="mt-8 bg-brand-yellow text-brand-teal-deep hover:bg-brand-yellow/90"
+        >
+          Chcem sa stať ambasádorom
+        </Button>
+      </div>
+    </section>
+  );
+}
+
 
 export function Faq() {
   const faqs = [
