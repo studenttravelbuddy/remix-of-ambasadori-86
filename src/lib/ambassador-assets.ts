@@ -1,3 +1,3 @@
-import termsPdfUrl from "@/assets/podmienky-ambasadorskeho-programu.pdf?url";
+import termsPdfAsset from "@/assets/podmienky-ambasadorskeho-programu.pdf.asset.json";
 
-export const TERMS_PDF_URL = termsPdfUrl;
+export const TERMS_PDF_URL = termsPdfAsset.url;
