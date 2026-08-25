@@ -46,9 +46,11 @@ const defaultValues = {
   teachingScope: "",
   instagramHandle: "",
   tiktokHandle: "",
-  portfolioUrl: "",
+  video1Url: "",
+  video2Url: "",
+  video3Url: "",
   motivation: "",
-  experience: "",
+
   eligibilityConfirmed: false as unknown as true,
   termsAccepted: false as unknown as true,
   contentUseAccepted: false as unknown as true,
