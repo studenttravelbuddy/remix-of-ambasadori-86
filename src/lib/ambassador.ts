@@ -5,6 +5,8 @@ export type CardType = (typeof CARD_TYPES)[number];
 
 export const PROGRAM_CAPACITY = 200;
 
+export const TERMS_PDF_URL = "/podmienky-ambasadorskeho-programu.pdf";
+
 export const CARD_META: Record<
   CardType,
   {
