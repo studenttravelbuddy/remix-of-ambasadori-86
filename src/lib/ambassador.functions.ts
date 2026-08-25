@@ -29,8 +29,9 @@ export const submitApplication = createServerFn({ method: "POST" })
       video3_url: data.video3Url,
       motivation: data.motivation || null,
       experience: null,
-
+      eligibility_confirmed: data.eligibilityConfirmed,
       terms_accepted: data.termsAccepted,
+
       content_use_accepted: data.contentUseAccepted,
       gdpr_accepted: data.gdprAccepted,
     });
