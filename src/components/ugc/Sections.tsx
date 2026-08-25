@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { BrandMark, BrandMarkRow } from "@/components/ugc/BrandMark";
-import { CARD_META, CARD_TYPES } from "@/lib/ambassador";
+import { CARD_META, CARD_TYPES, TERMS_PDF_URL } from "@/lib/ambassador";
 
 function scrollToForm() {
   document.getElementById("formular")?.scrollIntoView({ behavior: "smooth", block: "start" });
