@@ -6,6 +6,8 @@ import { ApplicationForm } from "@/components/ugc/ApplicationForm";
 import {
   Eligibility,
   Faq,
+  FinalCta,
+  ProgramTerms,
   Hero,
   HowItWorks,
   NoInfluencerNeeded,
@@ -48,7 +50,9 @@ function Index() {
       <NoInfluencerNeeded />
       <Rewards />
       <Eligibility />
+      <ProgramTerms />
       <Faq />
+      <FinalCta />
       <ApplicationForm />
       <SiteFooter />
     </main>
