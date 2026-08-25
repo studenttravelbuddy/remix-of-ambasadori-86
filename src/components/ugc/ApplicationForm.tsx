@@ -471,6 +471,11 @@ export function ApplicationForm() {
               ))}
             </div>
 
+            <p className="text-xs text-muted-foreground">
+              Odoslanie registračného formulára automaticky neznamená prijatie do programu. Prihlášky
+              vyhodnotí zástupca CKM SYTS podľa aktuálnej kapacity a vybraných záujemcov kontaktuje.
+            </p>
+
             <Button
               type="submit"
               size="lg"
@@ -479,6 +484,7 @@ export function ApplicationForm() {
             >
               {form.formState.isSubmitting ? "Odosielam…" : "Odoslať prihlášku"}
             </Button>
+
           </form>
         </Form>
       </div>
