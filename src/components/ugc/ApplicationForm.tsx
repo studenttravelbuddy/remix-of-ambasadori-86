@@ -364,7 +364,39 @@ export function ApplicationForm() {
               </p>
             )}
 
-            <div className="grid gap-5 sm:grid-cols-3">
+            <div className="space-y-5 rounded-2xl border-2 border-brand-teal/40 bg-brand-teal-light p-5">
+              <div>
+                <h3 className="font-display text-lg font-bold">Tvoje 3 videá</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Nahraj videá na Disk Google, Dropbox, WeTransfer alebo iné úložisko a vlož sem
+                  odkazy. Videá musia byť prístupné na prezretie.
+                </p>
+              </div>
+              {(
+                [
+                  ["video1Url", "Odkaz na video 1"],
+                  ["video2Url", "Odkaz na video 2"],
+                  ["video3Url", "Odkaz na video 3"],
+                ] as const
+              ).map(([name, label]) => (
+                <FormField
+                  key={name}
+                  control={form.control}
+                  name={name}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{label}</FormLabel>
+                      <FormControl>
+                        <Input placeholder="https://..." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              ))}
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="instagramHandle"
@@ -391,19 +423,6 @@ export function ApplicationForm() {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="portfolioUrl"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Ukážka obsahu (nepovinné)</FormLabel>
-                    <FormControl>
-                      <Input placeholder="https://..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
             </div>
 
             <FormField
@@ -411,28 +430,15 @@ export function ApplicationForm() {
               name="motivation"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Prečo práve ty?</FormLabel>
+                  <FormLabel>Chceš nám niečo dopísať? (nepovinné)</FormLabel>
                   <FormControl>
-                    <Textarea rows={4} placeholder="Napíš nám niečo o sebe a svojich nápadoch." {...field} />
+                    <Textarea rows={3} placeholder="Napríklad k čomu sa videá vzťahujú." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="experience"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Skúsenosti s tvorbou obsahu (nepovinné)</FormLabel>
-                  <FormControl>
-                    <Textarea rows={3} {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
 
             <div className="space-y-3">
               {(
