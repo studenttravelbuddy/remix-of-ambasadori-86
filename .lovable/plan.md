@@ -1,39 +1,21 @@
-# Odmena = kupón do e-shopu (prenosný, nie školský preukaz)
+# Doplnenie FAQ: školský preukaz a kupón do e-shopu
 
-Na homepage (`/`, hravá verzia) a vo formulári jasne vysvetlíme, ako funguje odmena:
+Všetko ostatné na stránke ostáva tak, ako je. Pridáme len dve nové otázky do FAQ s vysvetlením, ako funguje odmena, keď už má účastník školský preukaz.
 
-**Kľúčová správa:** Po schválení 3 videí nedostane účastník priamo preukaz, ale **kupón do e-shopu v hodnote preukazu ISIC / ITIC / EURO<26 na 1 rok**. Kupón je **prenosný** – ak má už preukaz zo školy (škola mu ho vydala), školské preukazy sa týmto spôsobom vydať nedajú, ale kupón môže použiť na nákup preukazu **pre niekoho iného** (kamarát, súrodenec…).
+## Obsahové zmeny
 
-## Kde sa zmení obsah
+1. **Pôvodná stránka** (`src/components/ugc/Sections.tsx`)
+   - Do `faqs` pridať:
+     - **Otázka:** „Čo ak už mám školský preukaz?“
+     - **Odpoveď:** „Dostaneš kupón do e-shopu a môžeš kartu kupiť niekomu inému, kto má na ňu nárok, za tvoje videá.“
+     - **Otázka:** „Ako môžem preukaz potom získať?“
+     - **Odpoveď:** „Dostaneš kupón do e-shopu na www.objednaj-preukaz.sk, kde si preukaz ISIC, ITIC alebo EURO<26 kúpiš.“
 
-1. **Hero** (`PlayfulAmbassadorPage.tsx`)
-   - Podnadpis doplníme o vetu: odmena je kupón do e-shopu v hodnote preukazu – a ak už máš preukaz zo školy, môžeš ho darovať niekomu inému.
-
-2. **Krok 3 v „Tvoja cesta k preukazu“**
-   - „Schválime = preukaz zadarmo“ upravíme na „Schválime = kupón do e-shopu“, s textom: dostaneš kupón v hodnote preukazu na rok; ak preukaz už máš zo školy, kupón použiješ pre koho chceš.
-
-3. **Nový info blok „Ako získam odmenu?“** (za sekciou preukazov)
-   - 3 stručné body v hravom štýle:
-     - Kupón v hodnote preukazu ISIC / ITIC / EURO<26 na 1 rok do nášho e-shopu.
-     - Školské preukazy (vydané cez školu) sa cez program vydať nedajú.
-     - Kupón je prenosný – ak už preukaz máš, môžeš ho darovať niekomu inému.
-   - Farebnosť podľa schválených brand farieb (teal / žltá / ružová / oranžová).
-
-4. **FAQ – nové otázky** (na oboch stránkových verziách, ak ostáva pôvodná)
-   - „Mám preukaz už zo školy – o čo prídem?“ → Kupón je prenosný, preukaz môžeš kúpiť niekomu inému.
-   - „Prečo nedostanem priamo preukaz?“ → Školské preukazy vieme vydať len cez školu; preto dostaneš kupón do e-shopu v plnej hodnote preukazu.
-
-5. **Formulár** (`ApplicationForm.tsx`)
-   - Pri výbere „Áno, už ho mám“ pridáme vysvetlivku: ak je to preukaz vydaný školou, kupón môžeš použiť pre niekoho iného.
-   - Text po odoslaní upravíme: „…ak ich schválime, pošleme ti kupón do e-shopu v hodnote preukazu na 1 rok.“
-   - Výber „Nie, chcem nový“ – vysvetlivka, že nový preukaz si vybaví kupónom v e-shope (nie školský preukaz).
-
-6. **Podmienky** (`ambassador-terms.ts` / PDF)
-   - Bez zásahu do znenia článkov. Ak bude treba, doplníme vysvetľujúcu poznámku v úvode podmienok (nie v zmluvnom texte), že kupón je prenosný. Tento bod najprv konzultujem, či ho chceš aj v PDF.
+2. **Hravá verzia homepage** (`src/components/ugc/PlayfulAmbassadorPage.tsx`)
+   - Do `faqs` pridať rovnaké dve otázky a odpovede.
 
 ## Technické detaily
 
-- Iba textové/obsahové zmeny v komponentoch: `src/components/ugc/PlayfulAmbassadorPage.tsx`, `src/components/ugc/ApplicationForm.tsx`, prípadne `src/components/ugc/Sections.tsx` (pôvodná verzia).
-- Žiadne zmeny schémy, databázy ani validácie – pole „mám už preukaz / chcem nový“ ostáva.
-- Brand farby a typografia bez zmeny; nový blok v existujúcom hravom štýle.
-- Overenie: build + vizuálna kontrola desktop/mobile cez prehliadač.
+- Iba textové zmeny v existujúcich FAQ poliach.
+- Žiadna zmena dizajnu, farieb, formulára ani databázy.
+- Overenie: build + vizuálna kontrola, že FAQ správne zobrazuje nové otázky.
