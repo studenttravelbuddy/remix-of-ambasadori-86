@@ -146,8 +146,6 @@
   --brand-teal-deep: #006666;
   --brand-teal-light: #e8f5f5;
   --brand-yellow: #ffc805;
-  --brand-blue: #008cdc;
-  --brand-blue-dark: #00527f;
   --brand-orange: #ff7314;
   --brand-orange-dark: #8c2f0d;
   --brand-pink: #ec0578;
@@ -185,8 +183,6 @@
   --color-brand-teal-deep: var(--brand-teal-deep);
   --color-brand-teal-light: var(--brand-teal-light);
   --color-brand-yellow: var(--brand-yellow);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-blue-dark: var(--brand-blue-dark);
   --color-brand-orange: var(--brand-orange);
   --color-brand-orange-dark: var(--brand-orange-dark);
   --color-brand-pink: var(--brand-pink);
@@ -236,7 +232,7 @@
 }
 
 .ambassador-playful {
-  --primary: var(--brand-blue);
+  --primary: var(--brand-teal);
   --secondary: var(--background);
   --secondary-foreground: var(--foreground);
   --muted: var(--background);
