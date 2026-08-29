@@ -212,17 +212,17 @@
   text-wrap: balance;
 }
 
-@keyframes playful-route-draw {
+@keyframes playful-route-flow {
   from {
-    stroke-dashoffset: 420;
+    stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: -36;
   }
 }
 
 .playful-route path {
-  animation: playful-route-draw 2.4s ease-out both;
+  animation: playful-route-flow 1.2s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
