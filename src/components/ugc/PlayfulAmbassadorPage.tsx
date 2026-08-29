@@ -26,7 +26,7 @@ const steps = [
   {
     number: "01",
     title: "Natoč 3 videá",
-    text: "Krátke videá približne 30–60 sekúnd. Stačí mobil, prirodzenosť a tvoj vlastný pohľad.",
+    text: "Krátke videá približne 30–60 sekúnd. Stačí mobil, prirodzenosť a tvoj vlastný uhol pohľadu.",
     icon: Film,
     color: "bg-brand-yellow text-foreground",
     position: "lg:mr-auto",
@@ -211,7 +211,7 @@ function VideoIdeas() {
           {ideas.map((idea, index) => (
             <li key={idea} className="flex min-h-32 items-start gap-4 rounded-lg bg-background p-5 text-foreground">
               <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-brand-yellow font-display font-black">{index + 1}</span>
-              <p className="pt-1 font-bold leading-snug">„{idea}“</p>
+              <p className="pt-1 font-bold leading-snug">{idea}</p>
             </li>
           ))}
         </ul>
