@@ -1,18 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { ApplicationForm } from "@/components/ugc/ApplicationForm";
-import {
-  Eligibility,
-  Faq,
-  Hero,
-  HowItWorks,
-  SiteFooter,
-  VideoIdeas,
-} from "@/components/ugc/Sections";
+import { PlayfulAmbassadorPage } from "@/components/ugc/PlayfulAmbassadorPage";
 
-const title = "3 videá = ISIC, ITIC alebo EURO<26 na rok zadarmo";
+const title = "Ambasádor ISIC, ITIC a EURO<26 | 3 videá";
 const description =
-  "Natoč 3 krátke videá na mobil, pošli nám ich a keď ich schválime, získaš preukaz ISIC, ITIC alebo EURO<26 na rok zadarmo. Bez výberového konania.";
+  "Natoč 3 krátke videá, pošli nám ich a po schválení získaj ISIC, ITIC alebo EURO<26 na rok zadarmo. Ready for more?";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,20 +17,6 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: PlayfulAmbassadorPage,
 });
-
-function Index() {
-  return (
-    <main>
-      <Hero />
-      <HowItWorks />
-      <VideoIdeas />
-      <Eligibility />
-      <Faq />
-      <ApplicationForm />
-      <SiteFooter />
-    </main>
-  );
-}
 
