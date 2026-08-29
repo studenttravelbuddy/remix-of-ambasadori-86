@@ -55,7 +55,7 @@ const ideas = [
   "Toto som s preukazom vôbec nečakal/a",
   "Kam chodím s preukazom na zľavu",
   "Ako využiť preukaz na cestovanie",
-  "Alebo tvoj vlastný nápad",
+  "Alebo tvoj vlastný nápad..",
 ] as const;
 
 const faqs = [
