@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AmbasadorRouteImport } from './routes/ambasador'
 import { Route as PodmienkyAmbasadorskehoProgramuRouteImport } from './routes/podmienky-ambasadorskeho-programu'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmbasadorRoute = AmbasadorRouteImport.update({
+  id: '/ambasador',
+  path: '/ambasador',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PodmienkyAmbasadorskehoProgramuRoute =
@@ -26,27 +32,31 @@ const PodmienkyAmbasadorskehoProgramuRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ambasador': typeof AmbasadorRoute
   '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ambasador': typeof AmbasadorRoute
   '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ambasador': typeof AmbasadorRoute
   '/podmienky-ambasadorskeho-programu': typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/podmienky-ambasadorskeho-programu'
+  fullPaths: '/' | '/ambasador' | '/podmienky-ambasadorskeho-programu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/podmienky-ambasadorskeho-programu'
-  id: '__root__' | '/' | '/podmienky-ambasadorskeho-programu'
+  to: '/' | '/ambasador' | '/podmienky-ambasadorskeho-programu'
+  id: '__root__' | '/' | '/ambasador' | '/podmienky-ambasadorskeho-programu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmbasadorRoute: typeof AmbasadorRoute
   PodmienkyAmbasadorskehoProgramuRoute: typeof PodmienkyAmbasadorskehoProgramuRoute
 }
 
@@ -57,6 +67,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ambasador': {
+      id: '/ambasador'
+      path: '/ambasador'
+      fullPath: '/ambasador'
+      preLoaderRoute: typeof AmbasadorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/podmienky-ambasadorskeho-programu': {
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmbasadorRoute: AmbasadorRoute,
   PodmienkyAmbasadorskehoProgramuRoute: PodmienkyAmbasadorskehoProgramuRoute,
 }
 export const routeTree = rootRouteImport
