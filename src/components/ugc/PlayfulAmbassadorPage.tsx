@@ -163,7 +163,7 @@ function Journey() {
             aria-hidden
             viewBox="0 0 800 780"
             preserveAspectRatio="none"
-            className="absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-[62%] -translate-x-1/2 text-brand-yellow lg:block"
+            className="playful-route absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-[62%] -translate-x-1/2 text-brand-yellow lg:block"
           >
             <path d="M130 20 C720 100 720 300 400 360 C40 430 40 650 670 750" fill="none" stroke="currentColor" strokeWidth="18" strokeLinecap="round" strokeDasharray="2 34" />
           </svg>
@@ -284,7 +284,7 @@ function PlayfulFooter() {
         <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
           <a href="#ako-to-funguje" className="hover:text-brand-yellow">Ako to funguje</a>
           <Link to={TERMS_PAGE_URL} className="hover:text-brand-yellow">Podmienky</Link>
-          <button type="button" onClick={scrollToForm} className="font-bold hover:text-brand-yellow">Poslať videá</button>
+          <Button type="button" variant="link" onClick={scrollToForm} className="h-auto p-0 font-bold text-primary-foreground hover:text-brand-yellow">Poslať videá</Button>
         </div>
       </div>
     </footer>
