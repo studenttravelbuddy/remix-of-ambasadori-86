@@ -36,7 +36,7 @@ const steps = [
     title: "Pošli nám ich",
     text: "Nahraj ich na Disk Google, Dropbox alebo WeTransfer a vlož tri odkazy priamo do formulára.",
     icon: Send,
-    color: "bg-brand-blue text-primary-foreground",
+    color: "bg-brand-teal text-foreground",
     position: "lg:ml-auto",
   },
   {
@@ -185,7 +185,7 @@ function Journey() {
           </div>
         </div>
         <div className="mt-14 text-center">
-          <Button size="lg" onClick={scrollToForm} className="h-12 bg-brand-blue px-7 font-bold text-primary-foreground shadow-none hover:bg-brand-pink">
+          <Button size="lg" onClick={scrollToForm} className="h-12 bg-brand-teal px-7 font-bold text-foreground shadow-none hover:bg-brand-yellow">
             Idem do toho <ArrowRight aria-hidden />
           </Button>
         </div>
@@ -196,14 +196,14 @@ function Journey() {
 
 function VideoIdeas() {
   return (
-    <section className="bg-brand-blue py-20 text-primary-foreground">
+    <section className="bg-brand-teal py-20 text-foreground">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
             <p className="text-sm font-black uppercase tracking-wider text-brand-yellow">Tvoje video, tvoj pohľad</p>
             <h2 className="mt-2 font-display text-4xl font-black sm:text-5xl">Čo môžeš natáčať?</h2>
           </div>
-          <p className="max-w-md text-primary-foreground/80">Nemusíš byť influencer. Chceme prirodzený obsah, ktorý nepôsobí ako reklama.</p>
+          <p className="max-w-md text-foreground/80">Nemusíš byť influencer. Chceme prirodzený obsah, ktorý nepôsobí ako reklama.</p>
         </div>
         <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {ideas.map((idea, index) => (
@@ -275,16 +275,16 @@ function PlayfulFaq() {
 
 function PlayfulFooter() {
   return (
-    <footer className="bg-brand-blue py-12 text-primary-foreground">
+    <footer className="bg-brand-teal py-12 text-foreground">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
         <div>
           <BrandMarkRow onLight={false} />
-          <p className="mt-5 max-w-xl text-xs leading-relaxed text-primary-foreground">Program organizuje združenie CKM SYTS, výhradný zástupca preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.</p>
+          <p className="mt-5 max-w-xl text-xs leading-relaxed text-foreground">Program organizuje združenie CKM SYTS, výhradný zástupca preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.</p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
           <a href="#ako-to-funguje" className="hover:text-brand-yellow">Ako to funguje</a>
           <Link to={TERMS_PAGE_URL} className="hover:text-brand-yellow">Podmienky</Link>
-          <Button type="button" variant="link" onClick={scrollToForm} className="h-auto p-0 font-bold text-primary-foreground hover:text-brand-yellow">Poslať videá</Button>
+          <Button type="button" variant="link" onClick={scrollToForm} className="h-auto p-0 font-bold text-foreground hover:text-brand-yellow">Poslať videá</Button>
         </div>
       </div>
     </footer>

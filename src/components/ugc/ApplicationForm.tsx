@@ -523,7 +523,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
               type="submit"
               size="lg"
               disabled={form.formState.isSubmitting}
-              className={cn("w-full sm:w-auto", variant === "playful" && "bg-brand-blue font-bold text-primary-foreground shadow-none hover:bg-brand-pink")}
+              className={cn("w-full sm:w-auto", variant === "playful" && "bg-brand-teal font-bold text-foreground shadow-none hover:bg-brand-pink")}
             >
               {form.formState.isSubmitting ? "Odosielam…" : "Poslať videá"}
             </Button>
