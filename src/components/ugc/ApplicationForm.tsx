@@ -207,7 +207,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                               CARD_META[card].accentClass,
                               "rounded-2xl border-2 p-4 text-left transition-all",
                               active
-                                ? "border-card-accent-strong bg-card-accent/10 shadow-md"
+                                ? cn("border-card-accent bg-card-accent/10 shadow-md", variant === "playful" && "shadow-none")
                                 : "border-border hover:border-card-accent",
                             )}
                           >
@@ -463,7 +463,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                         href={TERMS_PDF_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-brand-teal-dark underline underline-offset-2"
+                        className={cn("font-semibold text-brand-teal-dark underline underline-offset-2", variant === "playful" && "text-brand-teal")}
                       >
                         podmienkami ambasádorského programu
                       </a>{" "}
@@ -481,7 +481,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                         href={TERMS_PDF_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-brand-teal-dark underline underline-offset-2"
+                        className={cn("font-semibold text-brand-teal-dark underline underline-offset-2", variant === "playful" && "text-brand-teal")}
                       >
                         podmienok programu
                       </a>

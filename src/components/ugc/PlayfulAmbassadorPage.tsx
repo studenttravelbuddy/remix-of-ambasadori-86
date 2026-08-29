@@ -220,10 +220,10 @@ function VideoIdeas() {
 
 function Eligibility() {
   return (
-    <section className="bg-brand-teal-light py-20">
+    <section className="bg-background py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-wider text-brand-teal-dark">Vyber si správne</p>
+          <p className="text-sm font-black uppercase tracking-wider text-brand-teal">Vyber si správne</p>
           <h2 className="mt-2 font-display text-4xl font-black sm:text-5xl">Na ktorý preukaz máš nárok?</h2>
           <p className="mt-4 text-muted-foreground">Zapojiť sa môžeš s existujúcim preukazom aj bez neho. Vo formulári zvoľ ten, ktorého podmienky spĺňaš.</p>
         </div>
@@ -231,7 +231,7 @@ function Eligibility() {
           {CARD_TYPES.map((card, index) => (
             <article key={card} className={`${CARD_META[card].accentClass} relative overflow-hidden rounded-lg border-2 border-card-accent bg-card p-6`}>
               <span aria-hidden className="absolute right-0 top-0 h-3 w-20 bg-card-accent" />
-              <span className="font-display text-xs font-black text-card-accent-strong">0{index + 1}</span>
+              <span className="font-display text-xs font-black text-card-accent">0{index + 1}</span>
               <BrandMark card={card} className="mt-4" />
               <h3 className="mt-5 font-display text-xl font-black">{CARD_META[card].tagline}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{CARD_META[card].eligibility}</p>
