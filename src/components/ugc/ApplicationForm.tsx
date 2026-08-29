@@ -58,7 +58,7 @@ const defaultValues = {
   gdprAccepted: false as unknown as true,
 };
 
-export function ApplicationForm() {
+export function ApplicationForm({ variant = "default" }: { variant?: "default" | "playful" }) {
   const [submitted, setSubmitted] = useState(false);
   const send = useServerFn(submitApplication);
 
@@ -86,7 +86,7 @@ export function ApplicationForm() {
 
   if (submitted) {
     return (
-      <section id="formular" className="bg-secondary py-20">
+      <section id="formular" className={cn("bg-secondary py-20", variant === "playful" && "bg-brand-yellow")}>
         <div className="mx-auto max-w-2xl px-5 text-center">
           <h2 className="font-display text-3xl font-black sm:text-4xl">Videá sú odoslané 🎉</h2>
           <p className="mt-4 text-muted-foreground">
@@ -99,7 +99,7 @@ export function ApplicationForm() {
   }
 
   return (
-    <section id="formular" className="bg-secondary py-20">
+    <section id="formular" className={cn("bg-secondary py-20", variant === "playful" && "bg-brand-yellow")}>
       <div className="mx-auto max-w-3xl px-5">
         <h2 className="font-display text-3xl font-black sm:text-4xl">Pošli nám svoje videá</h2>
         <p className="mt-3 text-muted-foreground">
@@ -110,7 +110,10 @@ export function ApplicationForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="mt-10 space-y-8 rounded-3xl border border-border bg-card p-6 sm:p-8"
+            className={cn(
+              "mt-10 space-y-8 rounded-3xl border border-border bg-card p-6 sm:p-8",
+              variant === "playful" && "rounded-lg border-2 border-foreground shadow-[8px_8px_0_var(--brand-pink)]",
+            )}
             noValidate
           >
             <div className="grid gap-5 sm:grid-cols-2">
@@ -208,7 +211,7 @@ export function ApplicationForm() {
                                 : "border-border hover:border-card-accent",
                             )}
                           >
-                            <BrandMark card={card} className="h-8" />
+                            <BrandMark card={card} />
                             <p className="mt-3 font-display text-sm font-bold">
                               {CARD_META[card].tagline}
                             </p>
@@ -366,7 +369,10 @@ export function ApplicationForm() {
               </p>
             )}
 
-            <div className="space-y-5 rounded-2xl border-2 border-brand-teal/40 bg-brand-teal-light p-5">
+            <div className={cn(
+              "space-y-5 rounded-2xl border-2 border-brand-teal/40 bg-brand-teal-light p-5",
+              variant === "playful" && "rounded-lg border-brand-teal bg-background",
+            )}>
               <div>
                 <h3 className="font-display text-lg font-bold">Tvoje 3 videá</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -517,7 +523,7 @@ export function ApplicationForm() {
               type="submit"
               size="lg"
               disabled={form.formState.isSubmitting}
-              className="w-full sm:w-auto"
+              className={cn("w-full sm:w-auto", variant === "playful" && "bg-brand-blue font-bold text-primary-foreground shadow-none hover:bg-brand-pink")}
             >
               {form.formState.isSubmitting ? "Odosielam…" : "Poslať videá"}
             </Button>
