@@ -64,6 +64,8 @@ const faqs = [
   ["Čo ak video neschválite?", "Dáme ti spätnú väzbu a video môžeš upraviť alebo natočiť nanovo."],
   ["Kde sa moje videá objavia?", "Schválené videá môžeme použiť v komunikácii ISIC, ITIC a EURO<26, najmä na sociálnych sieťach, webe a v online kampaniach."],
   ["Musím už mať preukaz?", "Nie. Stačí, že máš na zvolený preukaz nárok a potvrdíš to vo formulári."],
+  ["Čo ak už mám školský preukaz?", "Dostaneš kupón do e-shopu a môžeš kartu kupiť niekomu inému, kto má na ňu nárok, za tvoje videá."],
+  ["Ako môžem preukaz potom získať?", "Dostaneš kupón do e-shopu na www.objednaj-preukaz.sk, kde si preukaz ISIC, ITIC alebo EURO<26 kúpiš."],
 ] as const;
 
 function scrollToForm() {
