@@ -27,6 +27,7 @@ export function BrandMark({
       loading="lazy"
       className={cn(
         "h-9 w-auto object-contain sm:h-10",
+        card === "euro26" && "h-14 sm:h-16",
         !onLight && "rounded-md bg-white/95 p-1.5",
         className,
       )}

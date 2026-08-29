@@ -235,6 +235,17 @@
   }
 }
 
+.ambassador-playful {
+  --primary: var(--brand-blue);
+  --secondary: var(--background);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--background);
+  --muted-foreground: var(--foreground);
+  --border: var(--brand-teal);
+  --input: var(--brand-teal);
+  --ring: var(--brand-teal);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

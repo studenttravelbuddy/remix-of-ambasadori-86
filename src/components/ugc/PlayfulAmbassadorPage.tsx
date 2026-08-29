@@ -72,17 +72,17 @@ function scrollToForm() {
 
 export function PlayfulAmbassadorPage() {
   return (
-    <main className="overflow-hidden bg-background">
+    <main className="ambassador-playful overflow-hidden bg-background">
       <PlayfulHero />
       <CampaignTeaser />
       <Journey />
       <VideoIdeas />
       <Eligibility />
       <PlayfulFaq />
-      <div className="relative bg-brand-yellow/20 py-4">
+      <div className="relative bg-brand-yellow py-4">
         <div aria-hidden className="mx-auto h-1 w-24 rounded-full bg-brand-pink" />
       </div>
-      <ApplicationForm />
+      <ApplicationForm variant="playful" />
       <PlayfulFooter />
     </main>
   );
@@ -90,20 +90,20 @@ export function PlayfulAmbassadorPage() {
 
 function PlayfulHero() {
   return (
-    <header className="relative min-h-[88svh] bg-brand-teal-dark text-primary-foreground">
+    <header className="relative min-h-[88svh] bg-brand-teal text-foreground">
       <div aria-hidden className="absolute -right-20 top-24 h-44 w-44 rounded-full border-[28px] border-brand-yellow sm:h-64 sm:w-64" />
       <div aria-hidden className="absolute -left-16 bottom-16 h-32 w-32 rotate-12 bg-brand-pink" />
       <div className="relative mx-auto flex min-h-[88svh] max-w-6xl flex-col px-5 py-8 sm:px-8 sm:py-10">
         <BrandMarkRow onLight={false} className="relative z-10" />
         <div className="flex flex-1 flex-col justify-center py-12 lg:max-w-4xl">
-          <p className="mb-5 flex items-center gap-2 text-sm font-black uppercase tracking-wider text-brand-yellow">
+          <p className="mb-5 flex items-center gap-2 text-sm font-black uppercase tracking-wider text-foreground">
             <Sparkles aria-hidden className="size-5" /> Ambasádorský program
           </p>
           <h1 className="font-display text-5xl font-black leading-[0.98] text-balance-tight sm:text-7xl lg:text-8xl">
             <span className="block text-brand-yellow">3 videá.</span>
             Preukaz na rok zadarmo.
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-primary-foreground/85 sm:text-xl">
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
             Natoč ich na mobil, pošli nám ich a keď ich schválime, získaš ISIC, ITIC alebo EURO&lt;26. Bez výberového konania.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -114,12 +114,12 @@ function PlayfulHero() {
             >
               Poslať videá <ArrowDown aria-hidden />
             </Button>
-            <a href="#ako-to-funguje" className="text-sm font-bold text-primary-foreground underline decoration-brand-teal decoration-2 underline-offset-4">
+            <a href="#ako-to-funguje" className="text-sm font-bold text-foreground underline decoration-brand-pink decoration-2 underline-offset-4">
               Ako to funguje
             </a>
           </div>
         </div>
-        <p className="relative z-10 text-xs font-bold uppercase tracking-wider text-primary-foreground/65">
+        <p className="relative z-10 text-xs font-bold uppercase tracking-wider text-foreground">
           ISIC · ITIC · EURO&lt;26
         </p>
       </div>
@@ -132,17 +132,17 @@ function CampaignTeaser() {
     <section aria-labelledby="campaign-title" className="bg-brand-yellow px-5 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1.6fr]">
         <div>
-          <p className="text-sm font-black uppercase tracking-wider text-brand-teal-dark">Kampaň 2026</p>
+          <p className="text-sm font-black uppercase tracking-wider text-foreground">Kampaň 2026</p>
           <h2 id="campaign-title" className="mt-2 font-display text-4xl font-black text-foreground sm:text-6xl">
             Ready for more?
           </h2>
           <p className="mt-3 font-bold text-foreground">1. 9. 2026 – 17. 11. 2026</p>
         </div>
-        <div className="flex aspect-[16/7] min-h-48 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed border-brand-teal-dark bg-background/70 p-8 text-center">
+        <div className="flex aspect-[16/7] min-h-48 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed border-foreground bg-background p-8 text-center">
           <div>
             <Sparkles aria-hidden className="mx-auto size-8 text-brand-pink" />
-            <p className="mt-3 font-display text-2xl font-black text-brand-teal-dark">Ready for more?</p>
-            <p className="mt-1 text-sm font-medium text-muted-foreground">Priestor pre kampaňový banner</p>
+            <p className="mt-3 font-display text-2xl font-black text-foreground">Ready for more?</p>
+            <p className="mt-1 text-sm font-medium text-foreground">Priestor pre kampaňový banner</p>
           </div>
         </div>
       </div>
@@ -185,7 +185,7 @@ function Journey() {
           </div>
         </div>
         <div className="mt-14 text-center">
-          <Button size="lg" onClick={scrollToForm} className="h-12 px-7 font-bold">
+          <Button size="lg" onClick={scrollToForm} className="h-12 bg-brand-blue px-7 font-bold text-primary-foreground shadow-none hover:bg-brand-pink">
             Idem do toho <ArrowRight aria-hidden />
           </Button>
         </div>
@@ -220,10 +220,10 @@ function VideoIdeas() {
 
 function Eligibility() {
   return (
-    <section className="bg-brand-teal-light py-20">
+    <section className="bg-background py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-black uppercase tracking-wider text-brand-teal-dark">Vyber si správne</p>
+          <p className="text-sm font-black uppercase tracking-wider text-brand-teal">Vyber si správne</p>
           <h2 className="mt-2 font-display text-4xl font-black sm:text-5xl">Na ktorý preukaz máš nárok?</h2>
           <p className="mt-4 text-muted-foreground">Zapojiť sa môžeš s existujúcim preukazom aj bez neho. Vo formulári zvoľ ten, ktorého podmienky spĺňaš.</p>
         </div>
@@ -231,19 +231,19 @@ function Eligibility() {
           {CARD_TYPES.map((card, index) => (
             <article key={card} className={`${CARD_META[card].accentClass} relative overflow-hidden rounded-lg border-2 border-card-accent bg-card p-6`}>
               <span aria-hidden className="absolute right-0 top-0 h-3 w-20 bg-card-accent" />
-              <span className="font-display text-xs font-black text-card-accent-strong">0{index + 1}</span>
+              <span className="font-display text-xs font-black text-card-accent">0{index + 1}</span>
               <BrandMark card={card} className="mt-4" />
               <h3 className="mt-5 font-display text-xl font-black">{CARD_META[card].tagline}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{CARD_META[card].eligibility}</p>
             </article>
           ))}
         </div>
-        <div className="mt-8 flex flex-col gap-4 rounded-lg bg-brand-teal-dark p-6 text-primary-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-4 rounded-lg bg-brand-pink p-6 text-primary-foreground sm:flex-row sm:items-center sm:justify-between">
           <div className="flex gap-3">
             <Users aria-hidden className="mt-0.5 size-6 shrink-0 text-brand-yellow" />
             <p className="max-w-2xl text-sm leading-relaxed">Zaškrtnutím vo formulári digitálne prijmeš podmienky programu: dodáš 3 videá a po ich schválení dostaneš preukaz na rok zadarmo.</p>
           </div>
-          <Button asChild variant="outline" className="shrink-0 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
+          <Button asChild variant="outline" className="shrink-0 border-primary-foreground bg-transparent text-primary-foreground hover:bg-brand-yellow hover:text-foreground">
             <Link to={TERMS_PAGE_URL}>Pozrieť podmienky</Link>
           </Button>
         </div>
@@ -262,7 +262,7 @@ function PlayfulFaq() {
         </div>
         <Accordion type="single" collapsible>
           {faqs.map(([question, answer], index) => (
-            <AccordionItem key={question} value={`faq-${index}`} className="border-brand-teal/40">
+            <AccordionItem key={question} value={`faq-${index}`} className="border-brand-teal">
               <AccordionTrigger className="text-left font-display text-lg font-bold">{question}</AccordionTrigger>
               <AccordionContent className="pr-8 leading-relaxed text-muted-foreground">{answer}</AccordionContent>
             </AccordionItem>
@@ -275,11 +275,11 @@ function PlayfulFaq() {
 
 function PlayfulFooter() {
   return (
-    <footer className="bg-brand-teal-dark py-12 text-primary-foreground">
+    <footer className="bg-brand-blue py-12 text-primary-foreground">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
         <div>
           <BrandMarkRow onLight={false} />
-          <p className="mt-5 max-w-xl text-xs leading-relaxed text-primary-foreground/70">Program organizuje združenie CKM SYTS, výhradný zástupca preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.</p>
+          <p className="mt-5 max-w-xl text-xs leading-relaxed text-primary-foreground">Program organizuje združenie CKM SYTS, výhradný zástupca preukazov ISIC, ITIC a EURO&lt;26 na Slovensku.</p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
           <a href="#ako-to-funguje" className="hover:text-brand-yellow">Ako to funguje</a>
