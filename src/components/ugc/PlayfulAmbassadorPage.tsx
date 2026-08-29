@@ -72,7 +72,7 @@ function scrollToForm() {
 
 export function PlayfulAmbassadorPage() {
   return (
-    <main className="overflow-hidden bg-background">
+    <main className="ambassador-playful overflow-hidden bg-background">
       <PlayfulHero />
       <CampaignTeaser />
       <Journey />
@@ -185,7 +185,7 @@ function Journey() {
           </div>
         </div>
         <div className="mt-14 text-center">
-          <Button size="lg" onClick={scrollToForm} className="h-12 px-7 font-bold">
+          <Button size="lg" onClick={scrollToForm} className="h-12 bg-brand-blue px-7 font-bold text-primary-foreground shadow-none hover:bg-brand-pink">
             Idem do toho <ArrowRight aria-hidden />
           </Button>
         </div>
