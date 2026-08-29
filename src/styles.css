@@ -216,6 +216,25 @@
   text-wrap: balance;
 }
 
+@keyframes playful-route-draw {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.playful-route path {
+  animation: playful-route-draw 2.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playful-route path {
+    animation: none;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
