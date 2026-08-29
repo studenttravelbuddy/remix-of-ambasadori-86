@@ -178,6 +178,14 @@ export function Faq() {
       q: "Musím už mať preukaz?",
       a: "Nie. Stačí, že máš na zvolený preukaz nárok a potvrdíš to vo formulári.",
     },
+    {
+      q: "Čo ak už mám školský preukaz?",
+      a: "Dostaneš kupón do e-shopu a môžeš kartu kupiť niekomu inému, kto má na ňu nárok, za tvoje videá.",
+    },
+    {
+      q: "Ako môžem preukaz potom získať?",
+      a: "Dostaneš kupón do e-shopu na www.objednaj-preukaz.sk, kde si preukaz ISIC, ITIC alebo EURO<26 kúpiš.",
+    },
   ];
 
   return (
