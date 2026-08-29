@@ -17,6 +17,9 @@ Celý hravý variant postavím striktne na pravidlách brand manuálov ISIC, ITI
 ## Obsah a funkcionalita
 
 - Nová route bude obsahovým duplikátom aktuálnej landing page: hero, proces, nápady na videá, nárok na jednotlivé preukazy, podmienky, FAQ, formulár a footer.
+- Doplním samostatnú kampaňovú plochu **„Ready for more?“** ako teaser ku kampani prebiehajúcej **1. 9. 2026 – 17. 11. 2026**.
+- Teaser zatiaľ použije iba text „Ready for more?“ a termín kampane. Zároveň vytvorím stabilný responzívny priestor pre budúci desktopový a mobilný banner, aby sa po dodaní vizuálov dali vymeniť bez prestavby stránky.
+- Rezervovaný bannerový priestor bude vizuálne zapadať do esovitej cesty a rešpektovať ochranné zóny, farby a typografiu brand manuálov; nebude obsahovať vymyslený kampaňový vizuál.
 - Formulár bude používať rovnakú validáciu, nárokové pravidlá a odosielanie do existujúcej databázy; meniť sa bude iba jeho vizuálne zasadenie.
 - Všetky odkazy na podmienky zostanú funkčné a povedú na existujúcu čitateľnú podstránku podmienok.
 - CTA tlačidlá budú rolovať k formuláru priamo na novej podstránke.
@@ -38,5 +41,6 @@ Celý hravý variant postavím striktne na pravidlách brand manuálov ISIC, ITI
 
 - Overím zostavenie aplikácie a runtime bez chýb.
 - Skontrolujem súlad s brand manuálmi: presné farebné kódy, správne fonty, nedeformované logá s ochranným priestorom a dostatočný kontrast.
+- Overím, že teaser „Ready for more?“ aj rezervovaný bannerový priestor fungujú bez deformácie na desktope a mobile a dátum kampane je zobrazený presne.
 - V prehliadači skontrolujem desktop aj mobil, esovitú cestu, CTA scroll, výber všetkých troch preukazov, dynamické nárokové polia, FAQ a odkazy na podmienky.
 - Formulár nebudem pri vizuálnom teste odosielať s falošnou prihláškou do produkčných dát.
