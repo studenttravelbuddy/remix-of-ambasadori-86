@@ -37,5 +37,6 @@ Celý hravý variant postavím striktne na pravidlách brand manuálov ISIC, ITI
 ## Overenie
 
 - Overím zostavenie aplikácie a runtime bez chýb.
+- Skontrolujem súlad s brand manuálmi: presné farebné kódy, správne fonty, nedeformované logá s ochranným priestorom a dostatočný kontrast.
 - V prehliadači skontrolujem desktop aj mobil, esovitú cestu, CTA scroll, výber všetkých troch preukazov, dynamické nárokové polia, FAQ a odkazy na podmienky.
 - Formulár nebudem pri vizuálnom teste odosielať s falošnou prihláškou do produkčných dát.
