@@ -13,8 +13,9 @@ const LOGOS: Record<CardType, { url: string; alt: string; inner: string }> = {
   itic: {
     url: iticLogo.url,
     alt: "ITIC – International Teacher Identity Card",
-    inner: "px-0 py-2",
+    inner: "p-2",
   },
+
   euro26: {
     url: eycLogo.url,
     alt: "EURO<26 / European Youth Card",
