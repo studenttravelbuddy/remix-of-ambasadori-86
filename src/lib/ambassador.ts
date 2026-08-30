@@ -89,9 +89,10 @@ export const applicationSchema = z
     teachingScope: z.string().trim().max(100).optional().or(z.literal("")),
     instagramHandle: z.string().trim().max(60).optional().or(z.literal("")),
     tiktokHandle: z.string().trim().max(60).optional().or(z.literal("")),
-    video1Url: videoUrl,
-    video2Url: videoUrl,
-    video3Url: videoUrl,
+    videoUrls: z
+      .array(videoUrl)
+      .min(1, { message: "Pridaj aspoň jeden odkaz na videá." })
+      .max(5, { message: "Maximálne 5 odkazov." }),
     motivation: z.string().trim().max(1500).optional().or(z.literal("")),
 
     eligibilityConfirmed: z.literal(true, {
