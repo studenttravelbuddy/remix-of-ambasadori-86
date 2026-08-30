@@ -14,12 +14,6 @@ export const CARD_META: Record<
     accentClass: string;
   }
 > = {
-  euro26: {
-    label: "EURO<26",
-    tagline: "Pre mladých do 26 rokov",
-    eligibility: "Vek do 26 rokov (vrátane).",
-    accentClass: "card-euro26",
-  },
   isic: {
     label: "ISIC",
     tagline: "Pre študentov ZŠ, SŠ a VŠ",
@@ -31,6 +25,12 @@ export const CARD_META: Record<
     tagline: "Pre učiteľov a pedagógov",
     eligibility: "Pedagogický zamestnanec na plný úväzok.",
     accentClass: "card-itic",
+  },
+  euro26: {
+    label: "EURO<26",
+    tagline: "Pre mladých do 26 rokov",
+    eligibility: "Vek do 26 rokov (vrátane).",
+    accentClass: "card-euro26",
   },
 };
 
