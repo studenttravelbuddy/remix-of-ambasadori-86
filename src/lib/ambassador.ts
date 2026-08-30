@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const CARD_TYPES = ["euro26", "isic", "itic"] as const;
+export const CARD_TYPES = ["isic", "itic", "euro26"] as const;
 export type CardType = (typeof CARD_TYPES)[number];
 
 export const PROGRAM_CAPACITY = 200;
