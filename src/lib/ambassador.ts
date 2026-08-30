@@ -90,7 +90,7 @@ export const applicationSchema = z
     instagramHandle: z.string().trim().max(60).optional().or(z.literal("")),
     tiktokHandle: z.string().trim().max(60).optional().or(z.literal("")),
     videoUrls: z
-      .array(videoUrl)
+      .array(z.object({ url: videoUrl }))
       .min(1, { message: "Pridaj aspoň jeden odkaz na videá." })
       .max(5, { message: "Maximálne 5 odkazov." }),
     motivation: z.string().trim().max(1500).optional().or(z.literal("")),

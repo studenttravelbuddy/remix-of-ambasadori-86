@@ -6,6 +6,7 @@ const NOTIFY_EMAIL = "marketingsimi@ckmsyts.sk";
 export const submitApplication = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => applicationSchema.parse(input))
   .handler(async ({ data }) => {
+    const videoUrls = data.videoUrls.map((v) => v.url);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     const { error } = await supabaseAdmin.from("ambassador_applications").insert({
