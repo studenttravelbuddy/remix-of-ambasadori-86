@@ -385,7 +385,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                 <FormField
                   key={item.id}
                   control={form.control}
-                  name={`videoUrls.${index}`}
+                  name={`videoUrls.${index}.url`}
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Odkaz {index + 1}</FormLabel>
@@ -425,7 +425,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                   type="button"
                   variant="outline"
                   size="sm"
-                  onClick={() => videoFields.append("")}
+                  onClick={() => videoFields.append({ url: "" })}
                   className={cn(variant === "playful" && "border-2 border-foreground shadow-none")}
                 >
                   <Plus className="mr-1 h-4 w-4" /> Pridať ďalší odkaz
