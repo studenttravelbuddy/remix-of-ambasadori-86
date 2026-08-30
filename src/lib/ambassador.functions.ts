@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
-import { applicationSchema } from "./ambassador";
+import { applicationSchema, CARD_META } from "./ambassador";
+
+const NOTIFY_EMAIL = "marketingsimi@ckmsyts.sk";
 
 export const submitApplication = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => applicationSchema.parse(input))
@@ -24,9 +26,10 @@ export const submitApplication = createServerFn({ method: "POST" })
       instagram_handle: data.instagramHandle || null,
       tiktok_handle: data.tiktokHandle || null,
       portfolio_url: null,
-      video1_url: data.video1Url,
-      video2_url: data.video2Url,
-      video3_url: data.video3Url,
+      video_urls: data.videoUrls,
+      video1_url: data.videoUrls[0],
+      video2_url: data.videoUrls[1] ?? null,
+      video3_url: data.videoUrls[2] ?? null,
       motivation: data.motivation || null,
       experience: null,
       eligibility_confirmed: data.eligibilityConfirmed,
@@ -44,6 +47,48 @@ export const submitApplication = createServerFn({ method: "POST" })
         throw new Error("Na tento e-mail už prihlášku máme.");
       }
       throw new Error("Prihlášku sa nepodarilo odoslať. Skús to prosím znova.");
+    }
+
+    // Notifikačný e-mail – chyba odoslania nemá zlyhať prihlášku
+    const resendKey = process.env["RESEND_API_KEY"];
+    if (resendKey) {
+      try {
+        const rows = [
+          ["Meno", data.fullName],
+          ["E-mail", data.email],
+          ["Telefón", data.phone],
+          ["Mesto", data.city],
+          ["Dátum narodenia", data.birthDate],
+          ["Preukaz", CARD_META[data.cardType].label],
+          [
+            "Stav preukazu",
+            data.holderStatus === "existing" ? `Už má preukaz (${data.cardNumber || "?"})` : "Chce nový",
+          ],
+          ["Škola / inštitúcia", data.schoolName || data.employerName || "–"],
+          ["Instagram", data.instagramHandle || "–"],
+          ["TikTok", data.tiktokHandle || "–"],
+          ["Odkazy na videá", data.videoUrls.join("\n")],
+          ["Poznámka", data.motivation || "–"],
+        ]
+          .map(([k, v]) => `${k}: ${v}`)
+          .join("\n");
+
+        await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "Ambasádorský program <onboarding@resend.dev>",
+            to: [NOTIFY_EMAIL],
+            subject: `Nová prihláška ambasádora: ${data.fullName} (${CARD_META[data.cardType].label})`,
+            text: rows,
+          }),
+        });
+      } catch {
+        // e-mail sa nepodaril – prihláška je uložená, pokračujeme ďalej
+      }
     }
 
     return { ok: true as const };
