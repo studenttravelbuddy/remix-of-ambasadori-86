@@ -43,6 +43,7 @@ export type Database = {
           terms_accepted: boolean
           tiktok_handle: string | null
           updated_at: string
+          video_urls: string[] | null
           video1_url: string | null
           video2_url: string | null
           video3_url: string | null
@@ -75,6 +76,7 @@ export type Database = {
           terms_accepted?: boolean
           tiktok_handle?: string | null
           updated_at?: string
+          video_urls?: string[] | null
           video1_url?: string | null
           video2_url?: string | null
           video3_url?: string | null
@@ -107,6 +109,7 @@ export type Database = {
           terms_accepted?: boolean
           tiktok_handle?: string | null
           updated_at?: string
+          video_urls?: string[] | null
           video1_url?: string | null
           video2_url?: string | null
           video3_url?: string | null
