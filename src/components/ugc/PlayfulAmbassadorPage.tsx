@@ -106,7 +106,7 @@ function PlayfulHero() {
             Preukaz na rok zadarmo.
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-foreground sm:text-xl">
-            Natoč ich na mobil, pošli nám ich a keď ich schválime, získaš ISIC, ITIC alebo EURO&lt;26. Bez výberového konania.
+            Natoč ich na mobil, pošli nám ich a keď ich schválime, získaš ISIC, ITIC alebo EURO&lt;26.&nbsp;
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button
