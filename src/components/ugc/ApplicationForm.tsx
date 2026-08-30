@@ -48,7 +48,7 @@ const defaultValues = {
   teachingScope: "",
   instagramHandle: "",
   tiktokHandle: "",
-  videoUrls: [""],
+  videoUrls: [{ url: "" }],
   motivation: "",
 
   eligibilityConfirmed: false as unknown as true,

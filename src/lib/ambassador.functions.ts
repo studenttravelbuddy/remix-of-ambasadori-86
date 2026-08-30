@@ -30,10 +30,10 @@ export const submitApplication = createServerFn({ method: "POST" })
       instagram_handle: data.instagramHandle || null,
       tiktok_handle: data.tiktokHandle || null,
       portfolio_url: null,
-      video_urls: data.videoUrls,
-      video1_url: data.videoUrls[0],
-      video2_url: data.videoUrls[1] ?? null,
-      video3_url: data.videoUrls[2] ?? null,
+      video_urls: videoUrls,
+      video1_url: videoUrls[0],
+      video2_url: videoUrls[1] ?? null,
+      video3_url: videoUrls[2] ?? null,
       motivation: data.motivation || null,
       experience: null,
       eligibility_confirmed: data.eligibilityConfirmed,
@@ -71,7 +71,7 @@ export const submitApplication = createServerFn({ method: "POST" })
           ["Škola / inštitúcia", data.schoolName || data.employerName || "–"],
           ["Instagram", data.instagramHandle || "–"],
           ["TikTok", data.tiktokHandle || "–"],
-          ["Odkazy na videá", data.videoUrls.join("\n")],
+          ["Odkazy na videá", videoUrls.join("\n")],
           ["Poznámka", data.motivation || "–"],
         ]
           .map(([k, v]) => `${k}: ${v}`)
