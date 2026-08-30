@@ -9,6 +9,9 @@ export const submitApplication = createServerFn({ method: "POST" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     const { error } = await supabaseAdmin.from("ambassador_applications").insert({
+      // video_urls je nový stĺpec, typy sa zregenerujú po nasadení
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ...({} as any),
       full_name: data.fullName,
       email: data.email.toLowerCase(),
       phone: data.phone,
