@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const CARD_TYPES = ["euro26", "isic", "itic"] as const;
+export const CARD_TYPES = ["isic", "itic", "euro26"] as const;
 export type CardType = (typeof CARD_TYPES)[number];
 
 export const PROGRAM_CAPACITY = 200;
@@ -14,12 +14,6 @@ export const CARD_META: Record<
     accentClass: string;
   }
 > = {
-  euro26: {
-    label: "EURO<26",
-    tagline: "Pre mladých do 26 rokov",
-    eligibility: "Vek do 26 rokov (vrátane).",
-    accentClass: "card-euro26",
-  },
   isic: {
     label: "ISIC",
     tagline: "Pre študentov ZŠ, SŠ a VŠ",
@@ -31,6 +25,12 @@ export const CARD_META: Record<
     tagline: "Pre učiteľov a pedagógov",
     eligibility: "Pedagogický zamestnanec na plný úväzok.",
     accentClass: "card-itic",
+  },
+  euro26: {
+    label: "EURO<26",
+    tagline: "Pre mladých do 26 rokov",
+    eligibility: "Vek do 26 rokov (vrátane).",
+    accentClass: "card-euro26",
   },
 };
 
