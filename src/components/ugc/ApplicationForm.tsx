@@ -1,7 +1,8 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useServerFn } from "@tanstack/react-start";
+import { Plus, X } from "lucide-react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -68,6 +69,7 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
 
   const cardType = form.watch("cardType");
   const holderStatus = form.watch("holderStatus");
+  const videoFields = useFieldArray({ control: form.control, name: "videoUrls" });
 
   async function onSubmit(values: ApplicationInput) {
     try {
