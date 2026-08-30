@@ -19,7 +19,7 @@ const LOGOS: Record<CardType, { url: string; alt: string; inner: string }> = {
   euro26: {
     url: eycLogo.url,
     alt: "EURO<26 / European Youth Card",
-    inner: "px-0 py-2",
+    inner: "p-2",
   },
 };
 
