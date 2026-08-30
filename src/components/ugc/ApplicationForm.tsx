@@ -375,31 +375,60 @@ export function ApplicationForm({ variant = "default" }: { variant?: "default" |
                 <h3 className="font-display text-lg font-bold">Tvoje 3 videá</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Nahraj videá na Disk Google, Dropbox, WeTransfer alebo iné úložisko a vlož sem
-                  odkazy. Videá musia byť prístupné na prezretie.
+                  odkazy. Videá môžeš nahrať aj na jeden spoločný odkaz (playlist/Drive) alebo
+                  pridať viacero odkazov tlačidlom „+“.
                 </p>
               </div>
-              {(
-                [
-                  ["video1Url", "Odkaz na video 1"],
-                  ["video2Url", "Odkaz na video 2"],
-                  ["video3Url", "Odkaz na video 3"],
-                ] as const
-              ).map(([name, label]) => (
+              {videoFields.fields.map((item, index) => (
                 <FormField
-                  key={name}
+                  key={item.id}
                   control={form.control}
-                  name={name}
+                  name={`videoUrls.${index}`}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{label}</FormLabel>
-                      <FormControl>
-                        <Input placeholder="https://..." {...field} />
-                      </FormControl>
+                      <FormLabel>Odkaz {index + 1}</FormLabel>
+                      <div className="flex items-center gap-2">
+                        <FormControl>
+                          <Input placeholder="https://..." {...field} />
+                        </FormControl>
+                        {videoFields.fields.length > 1 && (
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="icon"
+                            aria-label="Odstrániť odkaz"
+                            onClick={() => videoFields.remove(index)}
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        )}
+                      </div>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               ))}
+              {form.formState.errors.videoUrls?.root?.message && (
+                <p className="text-sm font-medium text-destructive">
+                  {form.formState.errors.videoUrls.root.message}
+                </p>
+              )}
+              {typeof form.formState.errors.videoUrls?.message === "string" && (
+                <p className="text-sm font-medium text-destructive">
+                  {form.formState.errors.videoUrls.message}
+                </p>
+              )}
+              {videoFields.fields.length < 5 && (
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => videoFields.append("")}
+                  className={cn(variant === "playful" && "border-2 border-foreground shadow-none")}
+                >
+                  <Plus className="mr-1 h-4 w-4" /> Pridať ďalší odkaz
+                </Button>
+              )}
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
