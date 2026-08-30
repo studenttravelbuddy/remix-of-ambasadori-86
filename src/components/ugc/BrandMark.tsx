@@ -1,13 +1,26 @@
-import eycLogo from "@/assets/eyc-logo.png.asset.json";
-import isicLogo from "@/assets/isic-logo.png.asset.json";
-import iticLogo from "@/assets/itic-logo.png.asset.json";
+import eycLogo from "@/assets/eyc-logo.svg.asset.json";
+import isicLogo from "@/assets/isic-logo.svg.asset.json";
+import iticLogo from "@/assets/itic-logo.svg.asset.json";
 import { CARD_META, CARD_TYPES, type CardType } from "@/lib/ambassador";
 import { cn } from "@/lib/utils";
 
-const LOGOS: Record<CardType, { url: string; alt: string }> = {
-  isic: { url: isicLogo.url, alt: "ISIC – International Student Identity Card" },
-  itic: { url: iticLogo.url, alt: "ITIC – International Teacher Identity Card" },
-  euro26: { url: eycLogo.url, alt: "EURO<26 / European Youth Card" },
+const LOGOS: Record<CardType, { url: string; alt: string; inner: string }> = {
+  isic: {
+    url: isicLogo.url,
+    alt: "ISIC – International Student Identity Card",
+    inner: "p-2",
+  },
+  itic: {
+    url: iticLogo.url,
+    alt: "ITIC – International Teacher Identity Card",
+    inner: "p-2",
+  },
+
+  euro26: {
+    url: eycLogo.url,
+    alt: "EURO<26 / European Youth Card",
+    inner: "px-0 py-2",
+  },
 };
 
 export function BrandMark({
@@ -26,13 +39,15 @@ export function BrandMark({
       alt={logo.alt}
       loading="lazy"
       className={cn(
-        "h-16 w-28 object-contain p-2",
+        "h-16 w-28 object-contain",
+        logo.inner,
         !onLight && "rounded-md bg-white/95",
         className,
       )}
     />
   );
 }
+
 
 export function BrandMarkRow({
   className,
