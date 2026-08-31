@@ -93,12 +93,12 @@ export function PlayfulAmbassadorPage() {
 
 function PlayfulHero() {
   return (
-    <header className="relative min-h-[88svh] bg-brand-teal text-foreground">
-      <div aria-hidden className="absolute -right-20 top-24 h-44 w-44 rounded-full border-[28px] border-brand-yellow sm:h-64 sm:w-64" />
-      <div aria-hidden className="absolute -left-16 bottom-16 h-32 w-32 rotate-12 bg-brand-pink" />
-      <div className="relative mx-auto flex min-h-[88svh] max-w-6xl flex-col px-5 py-8 sm:px-8 sm:py-10">
+    <header className="relative bg-brand-teal text-foreground sm:min-h-[88svh]">
+      <div aria-hidden className="absolute -right-24 top-20 h-32 w-32 rounded-full border-[20px] border-brand-yellow sm:-right-20 sm:top-24 sm:h-64 sm:w-64 sm:border-[28px]" />
+      <div aria-hidden className="absolute -left-16 bottom-16 h-24 w-24 rotate-12 bg-brand-pink sm:h-32 sm:w-32" />
+      <div className="relative mx-auto flex max-w-6xl flex-col px-5 py-8 sm:min-h-[88svh] sm:px-8 sm:py-10">
         <BrandMarkRow onLight={false} className="relative z-10" />
-        <div className="flex flex-1 flex-col justify-center py-12 lg:max-w-4xl">
+        <div className="flex flex-1 flex-col justify-center py-8 sm:py-12 lg:max-w-4xl">
           <p className="mb-5 flex items-center gap-2 text-sm font-black uppercase tracking-wider text-foreground">
             <Sparkles aria-hidden className="size-5" /> Ambasádorský program
           </p>
