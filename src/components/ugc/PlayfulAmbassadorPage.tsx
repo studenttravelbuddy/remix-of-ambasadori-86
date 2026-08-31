@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ApplicationForm } from "@/components/ugc/ApplicationForm";
 import { BrandMark, BrandMarkRow } from "@/components/ugc/BrandMark";
+import readyForMoreBanner from "@/assets/ready-for-more-back-to-school-2026.png.asset.json";
 import { CARD_META, CARD_TYPES } from "@/lib/ambassador";
 import { TERMS_PAGE_URL } from "@/lib/ambassador-assets";
 
@@ -134,19 +135,33 @@ function CampaignTeaser() {
     <section aria-labelledby="campaign-title" className="bg-brand-yellow px-5 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[0.9fr_1.6fr]">
         <div>
-          <p className="text-sm font-black uppercase tracking-wider text-foreground">Kampaň 2026</p>
+          <p className="text-sm font-black uppercase tracking-wider text-foreground">Kupónová kampaň Back to School 2026</p>
           <h2 id="campaign-title" className="mt-2 font-display text-4xl font-black text-foreground sm:text-6xl">
-            Ready for more?
+            <a
+              href="https://www.readyformore.isic.sk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-brand-pink decoration-4 underline-offset-8 transition-colors hover:text-brand-pink"
+            >
+              Ready for more?
+            </a>
           </h2>
           <p className="mt-3 font-bold text-foreground">1. 9. 2026 – 17. 11. 2026</p>
         </div>
-        <div className="flex aspect-[16/7] min-h-48 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed border-foreground bg-background p-8 text-center">
-          <div>
-            <Sparkles aria-hidden className="mx-auto size-8 text-brand-pink" />
-            <p className="mt-3 font-display text-2xl font-black text-foreground">Ready for more?</p>
-            <p className="mt-1 text-sm font-medium text-foreground">Priestor pre kampaňový banner</p>
-          </div>
-        </div>
+        <a
+          href="https://www.readyformore.isic.sk"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Otvoriť kampaň Ready for more"
+          className="block overflow-hidden rounded-lg border-2 border-foreground bg-background transition-transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-pink"
+        >
+          <img
+            src={readyForMoreBanner.url}
+            alt="Ready for more – kupónová kampaň Back to School 2026"
+            className="aspect-[2/1] h-auto w-full object-contain"
+            loading="lazy"
+          />
+        </a>
       </div>
     </section>
   );
