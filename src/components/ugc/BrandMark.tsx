@@ -39,7 +39,7 @@ export function BrandMark({
       alt={logo.alt}
       loading="lazy"
       className={cn(
-        "h-16 w-28 object-contain",
+        "h-10 w-[4.5rem] shrink-0 object-contain sm:h-16 sm:w-28",
         logo.inner,
         !onLight && "rounded-md bg-white/95",
         className,
@@ -57,7 +57,7 @@ export function BrandMarkRow({
   onLight?: boolean;
 }) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-4", className)}>
+    <div className={cn("flex flex-nowrap items-center gap-2 sm:gap-4", className)}>
       {CARD_TYPES.map((card) => (
         <BrandMark key={card} card={card} onLight={onLight} />
       ))}
