@@ -95,7 +95,7 @@ function PlayfulHero() {
   return (
     <header className="relative bg-brand-teal text-foreground sm:min-h-[88svh]">
       <div aria-hidden className="absolute -right-24 top-20 h-32 w-32 rounded-full border-[20px] border-brand-yellow sm:-right-20 sm:top-24 sm:h-64 sm:w-64 sm:border-[28px]" />
-      <div aria-hidden className="absolute -left-16 bottom-16 h-24 w-24 rotate-12 bg-brand-pink sm:h-32 sm:w-32" />
+      <div aria-hidden className="absolute -left-20 bottom-4 h-24 w-24 rotate-12 bg-brand-pink sm:-left-16 sm:bottom-16 sm:h-32 sm:w-32" />
       <div className="relative mx-auto flex max-w-6xl flex-col px-5 py-8 sm:min-h-[88svh] sm:px-8 sm:py-10">
         <BrandMarkRow onLight={false} className="relative z-10" />
         <div className="flex flex-1 flex-col justify-center py-8 sm:py-12 lg:max-w-4xl">
