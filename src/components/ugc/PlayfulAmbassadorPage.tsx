@@ -158,7 +158,7 @@ function CampaignTeaser() {
           <img
             src={readyForMoreBanner.url}
             alt="Ready for more – kupónová kampaň Back to School 2026"
-            className="aspect-[2/1] h-auto w-full object-contain"
+            className="h-auto w-full object-contain"
             loading="lazy"
           />
         </a>
