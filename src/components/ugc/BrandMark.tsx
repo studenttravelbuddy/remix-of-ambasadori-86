@@ -57,7 +57,7 @@ export function BrandMarkRow({
   onLight?: boolean;
 }) {
   return (
-    <div className={cn("flex flex-wrap items-center gap-4", className)}>
+    <div className={cn("flex flex-nowrap items-center gap-2 sm:gap-4", className)}>
       {CARD_TYPES.map((card) => (
         <BrandMark key={card} card={card} onLight={onLight} />
       ))}
