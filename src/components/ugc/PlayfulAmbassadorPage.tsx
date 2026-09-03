@@ -17,7 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ApplicationForm } from "@/components/ugc/ApplicationForm";
+import { ApplicationCta } from "@/components/ugc/ApplicationCta";
 import { BrandMark, BrandMarkRow } from "@/components/ugc/BrandMark";
 import readyForMoreBanner from "@/assets/ready-for-more-back-to-school-2026.png.asset.json";
 import { CARD_META, CARD_TYPES } from "@/lib/ambassador";
@@ -85,7 +85,7 @@ export function PlayfulAmbassadorPage() {
       <div className="relative bg-brand-yellow py-4">
         <div aria-hidden className="mx-auto h-1 w-24 rounded-full bg-brand-pink" />
       </div>
-      <ApplicationForm variant="playful" />
+      <ApplicationCta variant="playful" />
       <PlayfulFooter />
     </main>
   );
