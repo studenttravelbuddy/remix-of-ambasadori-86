@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "742e949c-53a7-4248-b563-7586e78d88aa",
-  "project_id": "7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c",
-  "url": "/__l5e/assets-v1/742e949c-53a7-4248-b563-7586e78d88aa/isic-logo.png",
-  "r2_key": "a/v1/7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c/742e949c-53a7-4248-b563-7586e78d88aa/isic-logo.png",
-  "original_filename": "isic-logo.png",
-  "size": 73075,
   "content_type": "image/png",
-  "created_at": "2026-08-24T06:09:00Z"
+  "created_at": "2026-08-24T06:09:00Z",
+  "original_filename": "isic-logo.png",
+  "project_id": "68a0e154-e06d-428f-836e-283a501f0b5f",
+  "r2_key": "a/v1/68a0e154-e06d-428f-836e-283a501f0b5f/742e949c-53a7-4248-b563-7586e78d88aa/isic-logo.png",
+  "size": 73075,
+  "url": "/__l5e/assets-v1/742e949c-53a7-4248-b563-7586e78d88aa/isic-logo.png",
+  "version": 1
 }

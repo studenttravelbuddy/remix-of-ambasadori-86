@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "ebcd9b47-84f7-4e03-a3af-b2c5e2d002e7",
-  "project_id": "7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c",
-  "url": "/__l5e/assets-v1/ebcd9b47-84f7-4e03-a3af-b2c5e2d002e7/ready-for-more-back-to-school-2026.png",
-  "r2_key": "a/v1/7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c/ebcd9b47-84f7-4e03-a3af-b2c5e2d002e7/ready-for-more-back-to-school-2026.png",
-  "original_filename": "ready-for-more-back-to-school-2026.png",
-  "size": 232820,
   "content_type": "image/webp",
-  "created_at": "2026-08-31T06:20:17Z"
+  "created_at": "2026-08-31T06:20:17Z",
+  "original_filename": "ready-for-more-back-to-school-2026.png",
+  "project_id": "68a0e154-e06d-428f-836e-283a501f0b5f",
+  "r2_key": "a/v1/68a0e154-e06d-428f-836e-283a501f0b5f/ebcd9b47-84f7-4e03-a3af-b2c5e2d002e7/ready-for-more-back-to-school-2026.png",
+  "size": 232820,
+  "url": "/__l5e/assets-v1/ebcd9b47-84f7-4e03-a3af-b2c5e2d002e7/ready-for-more-back-to-school-2026.png",
+  "version": 1
 }

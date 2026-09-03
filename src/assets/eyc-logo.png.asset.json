@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "eb575e43-182d-46f2-920d-ae8581f36014",
-  "project_id": "7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c",
-  "url": "/__l5e/assets-v1/eb575e43-182d-46f2-920d-ae8581f36014/eyc-logo.png",
-  "r2_key": "a/v1/7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c/eb575e43-182d-46f2-920d-ae8581f36014/eyc-logo.png",
-  "original_filename": "eyc-logo.png",
-  "size": 43434,
   "content_type": "image/webp",
-  "created_at": "2026-08-24T06:09:08Z"
+  "created_at": "2026-08-24T06:09:08Z",
+  "original_filename": "eyc-logo.png",
+  "project_id": "68a0e154-e06d-428f-836e-283a501f0b5f",
+  "r2_key": "a/v1/68a0e154-e06d-428f-836e-283a501f0b5f/eb575e43-182d-46f2-920d-ae8581f36014/eyc-logo.png",
+  "size": 43434,
+  "url": "/__l5e/assets-v1/eb575e43-182d-46f2-920d-ae8581f36014/eyc-logo.png",
+  "version": 1
 }

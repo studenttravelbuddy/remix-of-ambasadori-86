@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "7bbaa604-c792-41b6-81e4-29e4edb356ed",
-  "project_id": "7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c",
-  "url": "/__l5e/assets-v1/7bbaa604-c792-41b6-81e4-29e4edb356ed/itic-logo.svg",
-  "r2_key": "a/v1/7a7857fc-81ea-4a49-80b5-2f8be5b9ac9c/7bbaa604-c792-41b6-81e4-29e4edb356ed/itic-logo.svg",
-  "original_filename": "itic-logo.svg",
-  "size": 22317,
   "content_type": "image/svg+xml",
-  "created_at": "2026-08-30T13:26:36Z"
+  "created_at": "2026-08-30T13:26:36Z",
+  "original_filename": "itic-logo.svg",
+  "project_id": "68a0e154-e06d-428f-836e-283a501f0b5f",
+  "r2_key": "a/v1/68a0e154-e06d-428f-836e-283a501f0b5f/7bbaa604-c792-41b6-81e4-29e4edb356ed/itic-logo.svg",
+  "size": 22317,
+  "url": "/__l5e/assets-v1/7bbaa604-c792-41b6-81e4-29e4edb356ed/itic-logo.svg",
+  "version": 1
 }

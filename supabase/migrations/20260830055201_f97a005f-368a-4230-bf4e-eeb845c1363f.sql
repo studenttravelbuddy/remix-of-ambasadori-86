@@ -1,1 +1,0 @@
-ALTER TABLE public.ambassador_applications ADD COLUMN IF NOT EXISTS video_urls text[];
